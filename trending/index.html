@@ -1,0 +1,35 @@
+  <html>
+  <head>
+    <title>When's my show</title>
+    <!-- made by Trial and Success -->
+  <meta name="description" content="Find out when your favorite tv show airs a new episode! Today on air:" />
+  <meta name="keywords" content="tv, show, gotham, sherlock, orange, is, the, new, black, TVDB, API, trakt, silicon, valley, website, software, free, online, no download, twitter, Facebook, search, today, air, tv, live" />
+  <meta name="author" content="Trial and Success">
+  <meta name="robots" content="index, follow">
+  <meta name="revisit-after" content="3 month">
+  <meta property="og:url" content="http://van-der-noord.nl/whensmyshow/today/" />
+  <meta property="og:title" content="What airs today?" />
+  <meta property="og:description" content="Find out which tv shows air a new episode today!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://cdn.marketplaceimages.windowsphone.com/v8/images/4083859e-87c0-4921-8776-3928d7ea7b55?imageType=ws_icon_large.img" />
+
+  <title>When's my show?</title>
+  <!-- tv, show, search -->
+  <body>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <script src="../themoviedb.js"></script>
+  <style>
+  </style>
+  <script>
+  theMovieDb.tv.getPopular({}, function(data){
+    var data = JSON.parse(data);
+
+    for(var count = 0; count < data.results.length; count++){
+    document.write("<center><p style='font-family:Arial; color:black; text-decoration: none'>" + data.results[count].name + "</p></center>");
+  }
+  }, function(error){
+    console.log(error)
+    })
+  </script>
+  </body>
+  </html>

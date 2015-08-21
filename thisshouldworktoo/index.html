@@ -1,0 +1,2719 @@
+<html>
+<head>
+  <title>Next Episodes</title>
+  <!-- made by Trial and Success -->
+
+<style>
+.recent {
+  background-color: white;
+  background-size: cover;
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)';
+  filter: alpha(opacity=100);
+  opacity: 1;
+  color:black;
+  float: left;
+  width: 13.5%;
+  height: 75%;
+  margin-right: 1.5%;
+  margin-left: 1.5%;
+}
+body {
+background-size: cover;
+}
+body {
+background-size: cover;
+}
+table {
+    border: 0px solid black;
+    height: 61%;
+    width: 100%
+}
+
+#table1 {
+  height:30%
+}
+
+input[type="text"] {
+  display: block;
+  margin: 0;
+  width: 100%;
+
+  font-size: 18px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  padding: 10px;
+ border: solid 1px #dcdcdc;
+ transition: box-shadow 0.3s, border 0.3s;
+}
+input[type="text"]:focus, input[type="text"].focus {
+  outline: none;
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+}
+
+
+
+//animation
+body{
+  background: #000;
+  padding-top: 0px;
+
+}
+
+p{
+  color: white;
+  background-color: Black;
+      z-index: 1;
+      /* These three lines are for transparency in all browsers. */
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+      filter: alpha(opacity=50);
+      opacity: .5;
+  font-family: "Courier";
+  font-size: 20px;
+  margin: 10px 0 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 30em;
+
+p:a{
+  color: grey;
+  text-decoration: none;
+}
+
+
+#myTitle {
+  color: white;
+  background-color: Black;
+      z-index: 1;
+      /* These three lines are for transparency in all browsers. */
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+      filter: alpha(opacity=50);
+      opacity: .5;
+  font-family: "Arial";
+  font-size: 20px;
+  margin: 0px 0px 0px 0px;
+  padding-left: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 30em;
+}
+
+#myTd {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+
+}
+}
+#featured {
+font-size: 50px;text-align: left; font-family: Courier; color: black;
+background-color: white;
+    z-index: 1;
+    /* These three lines are for transparency in all browsers. */
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=50)';
+    filter: alpha(opacity=50);
+    opacity: .5;
+font-family: "Courier";
+font-size: 20px;
+margin: 10px 0 0 10px;
+white-space: nowrap;
+overflow: hidden;
+height: 1.63em;
+line-height: 175%;
+width: 0em;
+}
+
+#tweet, #facebook, #about {
+  background-color: white;
+  width: 2em;
+  height: 2.05em;
+  z-index: 1;
+  /* These three lines are for transparency in all browsers. */
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=50)';
+  filter: alpha(opacity=50);
+  opacity: .5;
+  overflow: hidden;
+  float: left;
+}
+
+</style>
+
+
+<!-- include the core styles -->
+<style>
+.alertify,
+.alertify-show,
+.alertify-log {
+	-webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	   -moz-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	    -ms-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	     -o-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	        transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+}
+.alertify-hide {
+	-webkit-transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
+	   -moz-transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
+	    -ms-transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
+	     -o-transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
+	        transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045); /* easeInBack */
+}
+.alertify-log-hide {
+	-webkit-transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
+	   -moz-transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
+	    -ms-transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
+	     -o-transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
+	        transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045); /* easeInBack */
+}
+.alertify-cover {
+	position: ; z-index: 99999;
+	top: 0; right: 0; bottom: 0; left: 0;
+	background-color:white;
+	filter:alpha(opacity=0);
+	background-color:black;
+	opacity:0.5;
+}
+	.alertify-cover-hidden {
+		display: none;
+	}
+.alertify {
+	position: fixed; z-index: 99999;
+	top: 5%; left: 33%;
+	width: 1000px;
+	height: 600px;
+	margin-left: -275px;
+	opacity: 1;
+}
+	.alertify-hidden {
+		-webkit-transform: translate(0,-150px);
+		   -moz-transform: translate(0,-150px);
+		    -ms-transform: translate(0,-150px);
+		     -o-transform: translate(0,-150px);
+		        transform: translate(0,-150px);
+		opacity: 0;
+		display: none;
+	}
+	/* overwrite display: none; for everything except IE6-8 */
+	:root *> .alertify-hidden {
+		display: block;
+		visibility: hidden;
+	}
+.alertify-logs {
+	position: fixed;
+	z-index: 5000;
+	bottom: 10px;
+	right: 10px;
+	width: 1000px;
+}
+.alertify-logs-hidden {
+	display: none;
+}
+	.alertify-log {
+		display: block;
+		margin-top: 10px;
+		position: relative;
+		right: -300px;
+		opacity: 0;
+	}
+	.alertify-log-show {
+		right: 0;
+		opacity: 1;
+	}
+	.alertify-log-hide {
+		-webkit-transform: translate(300px, 0);
+		   -moz-transform: translate(300px, 0);
+		    -ms-transform: translate(300px, 0);
+		     -o-transform: translate(300px, 0);
+		        transform: translate(300px, 0);
+		opacity: 0;
+	}
+	.alertify-dialog {
+		padding: 25px;
+	}
+		.alertify-resetFocus {
+			border: 0;
+			clip: rect(0 0 0 0);
+			height: 1px;
+			margin: -1px;
+			overflow: hidden;
+			padding: 0;
+			position: absolute;
+			width: 1px;
+		}
+		.alertify-inner {
+			text-align: center;
+		}
+		.alertify-text {
+			margin-bottom: 15px;
+			width: 100%;
+			-webkit-box-sizing: border-box;
+			   -moz-box-sizing: border-box;
+			        box-sizing: border-box;
+			font-size: 100%;
+		}
+		.alertify-buttons {
+		}
+			.alertify-button,
+			.alertify-button:hover,
+			.alertify-button:active,
+			.alertify-button:visited {
+				background: none;
+				text-decoration: none;
+				border: none;
+				/* line-height and font-size for input button */
+				line-height: 1.5;
+				font-size: 100%;
+				display: inline-block;
+				cursor: pointer;
+				margin-left: 5px;
+			}
+
+@media only screen and (max-width: 680px) {
+	.alertify,
+	.alertify-logs {
+		width: 90%;
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+	}
+	.alertify {
+		left: 5%;
+		margin: 0;
+	}
+}
+</style>
+<!-- include a theme, can be included into the core instead of 2 separate files -->
+<style>/**
+ * Default Look and Feel
+ */
+.alertify,
+.alertify-log {
+	font-family: sans-serif;
+}
+.alertify {
+	background: #FFF;
+	border: 10px solid #333; /* browsers that don't support rgba */
+	border: 10px solid rgba(0,0,0,.7);
+	border-radius: 8px;
+	box-shadow: 0 3px 3px rgba(0,0,0,.3);
+	-webkit-background-clip: padding;     /* Safari 4? Chrome 6? */
+	   -moz-background-clip: padding;     /* Firefox 3.6 */
+	        background-clip: padding-box; /* Firefox 4, Safari 5, Opera 10, IE 9 */
+}
+	.alertify-text {
+		border: 1px solid #CCC;
+		padding: 10px;
+		border-radius: 4px;
+	}
+	.alertify-button {
+		border-radius: 4px;
+		color: #FFF;
+		font-weight: bold;
+		padding: 6px 15px;
+		text-decoration: none;
+		text-shadow: 1px 1px 0 rgba(0,0,0,.5);
+		box-shadow: inset 0 1px 0 0 rgba(255,255,255,.5);
+		background-image: -webkit-linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));
+		background-image:    -moz-linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));
+		background-image:     -ms-linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));
+		background-image:      -o-linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));
+		background-image:         linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));
+	}
+	.alertify-button:hover,
+	.alertify-button:focus {
+		outline: none;
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,0));
+		background-image:    -moz-linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,0));
+		background-image:     -ms-linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,0));
+		background-image:      -o-linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,0));
+		background-image:         linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,0));
+	}
+	.alertify-button:focus {
+		box-shadow: 0 0 15px #2B72D5;
+	}
+	.alertify-button:active {
+		position: relative;
+		box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+	}
+		.alertify-button-cancel,
+		.alertify-button-cancel:hover,
+		.alertify-button-cancel:focus {
+			background-color: #FE1A00;
+			border: 1px solid #D83526;
+		}
+		.alertify-button-ok,
+		.alertify-button-ok:hover,
+		.alertify-button-ok:focus {
+			background-color: #5CB811;
+			border: 1px solid #3B7808;
+		}
+
+.alertify-log {
+	background: #1F1F1F;
+	background: rgba(0,0,0,.9);
+	padding: 15px;
+	border-radius: 4px;
+	color: #FFF;
+	text-shadow: -1px -1px 0 rgba(0,0,0,.5);
+}
+	.alertify-log-error {
+		background: #FE1A00;
+		background: rgba(254,26,0,.9);
+	}
+	.alertify-log-success {
+		background: #5CB811;
+		background: rgba(92,184,17,.9);
+	}</style>
+<script>
+/*! alertify - v0.3.11 - 2013-10-08 */
+!function(a,b){"use strict";var c,d=a.document;c=function(){var c,e,f,g,h,i,j,k,l,m,n,o,p,q={},r={},s=!1,t={ENTER:13,ESC:27,SPACE:32},u=[];return r={buttons:{holder:'<nav class="alertify-buttons">{{buttons}}</nav>',submit:'<button type="submit" class="alertify-button alertify-button-ok" id="alertify-ok">{{ok}}</button>',ok:'<button class="alertify-button alertify-button-ok" id="alertify-ok">{{ok}}</button>',cancel:'<button class="alertify-button alertify-button-cancel" id="alertify-cancel">{{cancel}}</button>'},input:'<div class="alertify-text-wrapper"><input type="text" class="alertify-text" id="alertify-text"></div>',message:'<p class="alertify-message">{{message}}</p>',log:'<article class="alertify-log{{class}}">{{message}}</article>'},p=function(){var a,c,e=!1,f=d.createElement("fakeelement"),g={WebkitTransition:"webkitTransitionEnd",MozTransition:"transitionend",OTransition:"otransitionend",transition:"transitionend"};for(a in g)if(f.style[a]!==b){c=g[a],e=!0;break}return{type:c,supported:e}},c=function(a){return d.getElementById(a)},q={labels:{ok:"OK",cancel:"Cancel"},delay:5e3,buttonReverse:!1,buttonFocus:"ok",transition:b,addListeners:function(a){var b,c,i,j,k,l="undefined"!=typeof f,m="undefined"!=typeof e,n="undefined"!=typeof o,p="",q=this;b=function(b){return"undefined"!=typeof b.preventDefault&&b.preventDefault(),i(b),"undefined"!=typeof o&&(p=o.value),"function"==typeof a&&("undefined"!=typeof o?a(!0,p):a(!0)),!1},c=function(b){return"undefined"!=typeof b.preventDefault&&b.preventDefault(),i(b),"function"==typeof a&&a(!1),!1},i=function(){q.hide(),q.unbind(d.body,"keyup",j),q.unbind(g,"focus",k),l&&q.unbind(f,"click",b),m&&q.unbind(e,"click",c)},j=function(a){var d=a.keyCode;(d===t.SPACE&&!n||n&&d===t.ENTER)&&b(a),d===t.ESC&&m&&c(a)},k=function(){n?o.focus():!m||q.buttonReverse?f.focus():e.focus()},this.bind(g,"focus",k),this.bind(h,"focus",k),l&&this.bind(f,"click",b),m&&this.bind(e,"click",c),this.bind(d.body,"keyup",j),this.transition.supported||this.setFocus()},bind:function(a,b,c){"function"==typeof a.addEventListener?a.addEventListener(b,c,!1):a.attachEvent&&a.attachEvent("on"+b,c)},handleErrors:function(){if("undefined"!=typeof a.onerror){var b=this;return a.onerror=function(a,c,d){b.error("["+a+" on line "+d+" of "+c+"]",0)},!0}return!1},appendButtons:function(a,b){return this.buttonReverse?b+a:a+b},build:function(a){var b="",c=a.type,d=a.message,e=a.cssClass||"";switch(b+='<div class="alertify-dialog">',b+='<a id="alertify-resetFocusBack" class="alertify-resetFocus" href="#">Reset Focus</a>',"none"===q.buttonFocus&&(b+='<a href="#" id="alertify-noneFocus" class="alertify-hidden"></a>'),"prompt"===c&&(b+='<div id="alertify-form">'),b+='<article class="alertify-inner">',b+=r.message.replace("{{message}}",d),"prompt"===c&&(b+=r.input),b+=r.buttons.holder,b+="</article>","prompt"===c&&(b+="</div>"),b+='<a id="alertify-resetFocus" class="alertify-resetFocus" href="#">Reset Focus</a>',b+="</div>",c){case"confirm":b=b.replace("{{buttons}}",this.appendButtons(r.buttons.cancel,r.buttons.ok)),b=b.replace("{{ok}}",this.labels.ok).replace("{{cancel}}",this.labels.cancel);break;case"prompt":b=b.replace("{{buttons}}",this.appendButtons(r.buttons.cancel,r.buttons.submit)),b=b.replace("{{ok}}",this.labels.ok).replace("{{cancel}}",this.labels.cancel);break;case"alert":b=b.replace("{{buttons}}",r.buttons.ok),b=b.replace("{{ok}}",this.labels.ok)}return l.className="alertify alertify-"+c+" "+e,k.className="alertify-cover",b},close:function(a,b){var c,d,e=b&&!isNaN(b)?+b:this.delay,f=this;this.bind(a,"click",function(){c(a)}),d=function(a){a.stopPropagation(),f.unbind(this,f.transition.type,d),m.removeChild(this),m.hasChildNodes()||(m.className+=" alertify-logs-hidden")},c=function(a){"undefined"!=typeof a&&a.parentNode===m&&(f.transition.supported?(f.bind(a,f.transition.type,d),a.className+=" alertify-log-hide"):(m.removeChild(a),m.hasChildNodes()||(m.className+=" alertify-logs-hidden")))},0!==b&&setTimeout(function(){c(a)},e)},dialog:function(a,b,c,e,f){j=d.activeElement;var g=function(){m&&null!==m.scrollTop&&k&&null!==k.scrollTop||g()};if("string"!=typeof a)throw new Error("message must be a string");if("string"!=typeof b)throw new Error("type must be a string");if("undefined"!=typeof c&&"function"!=typeof c)throw new Error("fn must be a function");return this.init(),g(),u.push({type:b,message:a,callback:c,placeholder:e,cssClass:f}),s||this.setup(),this},extend:function(a){if("string"!=typeof a)throw new Error("extend method must have exactly one paramter");return function(b,c){return this.log(b,a,c),this}},hide:function(){var a,b=this;u.splice(0,1),u.length>0?this.setup(!0):(s=!1,a=function(c){c.stopPropagation(),b.unbind(l,b.transition.type,a)},this.transition.supported?(this.bind(l,this.transition.type,a),l.className="alertify alertify-hide alertify-hidden"):l.className="alertify alertify-hide alertify-hidden alertify-isHidden",k.className="alertify-cover alertify-cover-hidden",j.focus())},init:function(){d.createElement("nav"),d.createElement("article"),d.createElement("section"),null==c("alertify-cover")&&(k=d.createElement("div"),k.setAttribute("id","alertify-cover"),k.className="alertify-cover alertify-cover-hidden",d.body.appendChild(k)),null==c("alertify")&&(s=!1,u=[],l=d.createElement("section"),l.setAttribute("id","alertify"),l.className="alertify alertify-hidden",d.body.appendChild(l)),null==c("alertify-logs")&&(m=d.createElement("section"),m.setAttribute("id","alertify-logs"),m.className="alertify-logs alertify-logs-hidden",d.body.appendChild(m)),d.body.setAttribute("tabindex","0"),this.transition=p()},log:function(a,b,c){var d=function(){m&&null!==m.scrollTop||d()};return this.init(),d(),m.className="alertify-logs",this.notify(a,b,c),this},notify:function(a,b,c){var e=d.createElement("article");e.className="alertify-log"+("string"==typeof b&&""!==b?" alertify-log-"+b:""),e.innerHTML=a,m.appendChild(e),setTimeout(function(){e.className=e.className+" alertify-log-show"},50),this.close(e,c)},set:function(a){var b;if("object"!=typeof a&&a instanceof Array)throw new Error("args must be an object");for(b in a)a.hasOwnProperty(b)&&(this[b]=a[b])},setFocus:function(){o?(o.focus(),o.select()):i.focus()},setup:function(a){var d,j=u[0],k=this;s=!0,d=function(a){a.stopPropagation(),k.setFocus(),k.unbind(l,k.transition.type,d)},this.transition.supported&&!a&&this.bind(l,this.transition.type,d),l.innerHTML=this.build(j),g=c("alertify-resetFocus"),h=c("alertify-resetFocusBack"),f=c("alertify-ok")||b,e=c("alertify-cancel")||b,i="cancel"===q.buttonFocus?e:"none"===q.buttonFocus?c("alertify-noneFocus"):f,o=c("alertify-text")||b,n=c("alertify-form")||b,"string"==typeof j.placeholder&&""!==j.placeholder&&(o.value=j.placeholder),a&&this.setFocus(),this.addListeners(j.callback)},unbind:function(a,b,c){"function"==typeof a.removeEventListener?a.removeEventListener(b,c,!1):a.detachEvent&&a.detachEvent("on"+b,c)}},{alert:function(a,b,c){return q.dialog(a,"alert",b,"",c),this},confirm:function(a,b,c){return q.dialog(a,"confirm",b,"",c),this},extend:q.extend,init:q.init,log:function(a,b,c){return q.log(a,b,c),this},prompt:function(a,b,c,d){return q.dialog(a,"prompt",b,c,d),this},success:function(a,b){return q.log(a,"success",b),this},error:function(a,b){return q.log(a,"error",b),this},set:function(a){q.set(a)},labels:q.labels,debug:q.handleErrors}},"function"==typeof define?define([],function(){return new c}):"undefined"==typeof a.alertify&&(a.alertify=new c)}(this);
+</script>
+
+<!--end head-->
+</head>
+<body>
+
+<div id="tweet" ><a target="_blank" id="tweetURL" style="color:black" class="twitter-shar/e-button"
+  href="https://twitter.com/share?text=See when the next episode of your favorite tv show airs on">
+  <i class="fa fa-twitter fa-2x"></i>
+</a></div><a id="FBUrl" style="color:black" target="_blank" href="https://www.facebook.com/sharer/sharer.php?app_id=113869198637480&sdk=joey&u=http%3A%2F%2Fvan-der-noord.nl%2Fwhensmyshow&display=popup&ref=plugin&src=share_button"><div id="facebook"><i class="fa fa-facebook fa-2x"></i></div></a>
+<script>function alertFB() {var maybe = confirm("Would you like to add our app to your facebook page?"); if(maybe){window.location.href= "https://www.facebook.com/dialog/pagetab?app_id=1594313917494736&redirect_uri=https://bit.ly/1M7UNw7"}}</script>
+<div id="about" onclick="alert('Soon there will be a privacy policy, TOS, FAQ, iOS + mac + android apps and an about page. And you can save all of your shows and see their info in one click!>'); alertFB();"><i class="fa fa-users fa-2x"></i></div>
+<script>
+window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+</script>
+<div id="featured" style=""></div>
+<table>
+  <tr>
+      <td id="myTd"><center><div id="myTitle" style="font-size: 50px;text-align: center; font-family: Arial; color: white;
+      background-color: Black;
+          z-index: 1;
+          /* These three lines are for transparency in all browsers. */
+          -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=50)';
+          filter: alpha(opacity=50);
+          opacity: .5;
+      font-family: "Arial";
+      font-size: 20px;
+      margin: 10px 0 0 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 30em;">Please enter a TV-Show:</div><div id="replace">
+        <input placeHolder="text" name="inputShow" id="inputShow" type="text" style="width: 600px; height: 75px; font-size: 50px; text-align: center;"><p id="insert"><span onclick="alertifyPopup()">See what airs today</span></p></input><p id ="insInf" onclick="alert(episodeInfo)"></p></div></center></td>
+<script>function alertifyPopup() {
+  alertify.alert("<div id='special'><iframe frameBorder='0' width='80%' height='80%' src='today/index.html'></iframe></div>");}</script>
+  </tr>
+</table>
+<div width="5em" height="1%" id="recentsT" style="background-color: Black;
+    z-index: 1;
+    /* These three lines are for transparency in all browsers. */
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=75)';
+    filter: alpha(opacity=75);
+    opacity: .75; color:white; width:100%; height:5%"><h2>Recent Episodes</h2></div><div style="height:25%; width:100%; background-color: Black;
+    z-index: 1;
+    /* These three lines are for transparency in all browsers. */
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=75)';
+    filter: alpha(opacity=75);
+    opacity: .75; color:white;" id="recents"><div onclick="similar()" style="font-family:Arial;" id="seenText"></div>
+    <div class="recent" id="recent1"> </div>
+    <div class="recent" id="recent2"></div>
+    <div class="recent" id="recent3"></div>
+    <div class="recent" id="recent4"></div>
+    <div class="recent" id="recent5"></div>
+    <div class="recent" id="recent6"></div>
+    </div>
+    <script>/*
+CHANGELOG: MONDAY 27 JULY 2015:
+Fixed indention
+Removed old parts
+Used parseInt() instead of '- 1 + 1'
+Added semi-colons
+*/
+/*
+CHANGELOG: SUNDAY 26 JULY 2015:
+Added time.today: current Date
+Added time.tomorrow: next Date
+Added time.today(object): current date as an object
+Added time.tomorrow(object): next date as an object
+Removed time.from
+*/
+
+
+
+
+var object = "object";
+
+function formatDate(date) { // get the date in proper format
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+    monthT = month;
+    yearT = year;
+    dayT = day;
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [year, month, day].join('-');
+}
+
+var time = {};
+time.until = function (date) {
+    var currentTime = formatDate(new Date());
+    var year = parseInt(date.substring(0, 4), 10);
+    var month = parseInt(date.substring(5, 7), 10);
+    var day = parseInt(date.substring(8, 10), 10);
+
+    var curMonth = monthT;
+    var curDay = dayT;
+    var curYear = yearT;
+
+    var monthBefor = month - 1;
+
+    var difDay = day - curDay;
+    var difMonth = month - curMonth;
+    var difWeek = 0;
+    if (difDay < 0) {
+        difMonth--;
+        if (monthBefor === 0) {
+            monthBefor = 12;
+        }
+        switch (monthBefor) {
+            case 1:
+            case 3:
+            case 5:
+            case 8:
+            case 7:
+            case 10:
+            case 12:
+                difDay = difDay + 31;
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 8:
+            case 11:
+                difDay = difDay + 30;
+                break;
+            case 2:
+                if (year % 4 === 0) {
+                    difDay = difDay + 29;
+                } else {
+                    difDay = difDay + 28;
+                }
+                break;
+            default:
+                console.log("error");
+                break;
+
+        }
+    }
+    if (difMonth < 0) {
+        difMonth += 12;
+        year--;
+    }
+    while (difDay >= 7) {
+        difDay = difDay - 7;
+        difWeek++;
+    }
+
+    var difYear = year - curYear;
+    return {
+        days: difDay,
+        weeks: difWeek,
+        months: difMonth,
+        years: difYear
+    };
+
+},
+time.today = function (object) {
+    var today = formatDate(new Date());
+    if (object == "object") {
+        var obj = {};
+        var yearO = parseInt(today.substring(0, 4), 10);
+        var monthO = parseInt(today.substring(5, 7), 10);
+        var dayO = parseInt(today.substring(8, 10), 10);
+        obj = {
+            _when: "today",
+            year: yearO,
+            month: monthO,
+            day: dayO
+        };
+        return obj;
+    } else {
+        return today;
+    }
+};
+time.tomorrow = function (object) {
+    var tomorrow = formatDate(new Date());
+    if (object == "object") {
+        var obj = {};
+        var yearO = parseInt(tomorrow.substring(0, 4), 10);
+        var monthO = parseInt(tomorrow.substring(5, 7), 10);
+        var dayO = parseInt(tomorrow.substring(8, 10), 10) + 1;
+        obj = {
+            _when: "tomorrow",
+            year: yearO,
+            month: monthO,
+            day: dayO
+        };
+        return obj;
+    } else {
+
+        var tomorrowBegin = tomorrow.substring(0, 8);
+        var tomorrowEnd = parseInt(dayT, 10) + 1;
+        tomorrow = tomorrowBegin + tomorrowEnd;
+        return tomorrow;
+    }
+};</script>
+<script>var theMovieDb = {};
+
+theMovieDb.common = {
+    api_key: "3b03c053f34ff11cfdc0d26b06ac95d1",
+    base_uri: "https://api.themoviedb.org/3/",
+    images_uri: "https://image.tmdb.org/t/p/",
+    timeout: 5000,
+    generateQuery: function (options) {
+        'use strict';
+        var myOptions, query, option;
+
+        myOptions = options || {};
+        query = "?api_key=" + theMovieDb.common.api_key;
+
+        if (Object.keys(myOptions).length > 0) {
+            for (option in myOptions) {
+                if (myOptions.hasOwnProperty(option) && option !== "id" && option !== "body") {
+                    query = query + "&" + option + "=" + myOptions[option];
+                }
+            }
+        }
+        return query;
+    },
+    validateCallbacks: function (callbacks) {
+        'use strict';
+        if (typeof callbacks[0] !== "function" || typeof callbacks[1] !== "function") {
+            throw "Success and error parameters must be functions!";
+        }
+    },
+    validateRequired: function (args, argsReq, opt, optReq, allOpt) {
+        'use strict';
+        var i, allOptional;
+
+        allOptional = allOpt || false;
+
+        if (args.length !== argsReq) {
+            throw "The method requires  " + argsReq + " arguments and you are sending " + args.length + "!";
+        }
+
+        if (allOptional) {
+            return;
+        }
+
+        if (argsReq > 2) {
+            for (i = 0; i < optReq.length; i = i + 1) {
+                if (!opt.hasOwnProperty(optReq[i])) {
+                    throw optReq[i] + " is a required parameter and is not present in the options!";
+                }
+            }
+        }
+    },
+    getImage: function (options) {
+        'use strict';
+        return theMovieDb.common.images_uri + options.size + "/" + options.file;
+    },
+    client: function (options, success, error) {
+        'use strict';
+        var method, status, xhr;
+
+        method = options.method || "GET";
+        status = options.status || 200;
+        xhr = new XMLHttpRequest();
+
+        xhr.ontimeout = function () {
+            error('{"status_code":408,"status_message":"Request timed out"}');
+        };
+
+        xhr.open(method, theMovieDb.common.base_uri + options.url, true);
+
+        if(options.method === "POST") {
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.setRequestHeader("Accept", "application/json");
+        }
+
+        xhr.timeout = theMovieDb.common.timeout;
+
+        xhr.onload = function (e) {
+            if (xhr.readyState === 4) {
+                if (xhr.status === status) {
+                    success(xhr.responseText);
+                } else {
+                    error(xhr.responseText);
+                }
+            } else {
+                error(xhr.responseText);
+            }
+        };
+
+        xhr.onerror = function (e) {
+            error(xhr.responseText);
+        };
+        if (options.method === "POST") {
+            xhr.send(JSON.stringify(options.body));
+        } else {
+            xhr.send(null);
+        }
+    }
+};
+
+theMovieDb.configurations = {
+    getConfiguration: function (success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 2);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "configuration" + theMovieDb.common.generateQuery()
+            },
+            success,
+            error
+        );
+    }
+};
+
+theMovieDb.account = {
+    getInformation: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["session_id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "account" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getLists: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["session_id", "id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "account/" + options.id + "/lists" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getFavoritesMovies: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["session_id", "id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "account/" + options.id + "/favorite_movies" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    addFavorite: function (options, success, error) {
+        'use strict';
+        var body;
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["session_id", "id", "movie_id", "favorite"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        body = {
+            "movie_id": options.movie_id,
+            "favorite": options.favorite
+        }
+
+
+        theMovieDb.common.client(
+            {
+                url: "account/" + options.id + "/favorite" + theMovieDb.common.generateQuery(options),
+                status: 201,
+                method: "POST",
+                body: body
+            },
+            success,
+            error
+        );
+    },
+    getRatedMovies: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["session_id", "id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "account/" + options.id + "/rated_movies" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getWatchlist: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["session_id", "id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "account/" + options.id + "/movie_watchlist" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    addMovieToWatchlist: function (options, success, error) {
+        'use strict';
+
+        var body;
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["session_id", "id", "movie_id", "movie_watchlist"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        body = {
+            "movie_id": options.movie_id,
+            "movie_watchlist": options.movie_watchlist
+        }
+
+        theMovieDb.common.client(
+            {
+                url: "account/" + options.id + "/movie_watchlist" + theMovieDb.common.generateQuery(options),
+                method: "POST",
+                status: 201,
+                body: body
+            },
+            success,
+            error
+        );
+    }
+};
+
+theMovieDb.authentication = {
+    generateToken: function (success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 2);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "authentication/token/new" + theMovieDb.common.generateQuery()
+            },
+            success,
+            error
+        );
+    },
+    askPermissions: function(options){
+       'use strict';
+
+       window.open("https://www.themoviedb.org/authenticate/" + options.token + "?redirect_to=" + options.redirect_to);
+
+    },
+    validateUser: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["request_token", "username", "password"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "authentication/token/validate_with_login" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    generateSession: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["request_token"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "authentication/session/new" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    generateGuestSession: function (success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 2);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "authentication/guest_session/new" + theMovieDb.common.generateQuery()
+            },
+            success,
+            error
+        );
+    }
+};
+
+theMovieDb.certifications = {
+    getList: function (success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 2);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "certification/movie/list" + theMovieDb.common.generateQuery()
+            },
+            success,
+            error
+        );
+    }
+};
+
+theMovieDb.changes = {
+    getMovieChanges: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, "", "", true);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "movie/changes" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getPersonChanges: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, "", "", true);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "person/changes" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    }
+};
+
+theMovieDb.collections = {
+    getCollection: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "collection/" + options.id + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getCollectionImages: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "collection/" + options.id + "/images" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    }
+
+};
+
+theMovieDb.companies = {
+    getCompany: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "company/" + options.id + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getCompanyMovies: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "company/" + options.id + "/movies" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    }
+
+};
+
+theMovieDb.credits = {
+    getCredit: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "credit/" + options.id + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    }
+};
+
+theMovieDb.discover = {
+    getMovies: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, "", "", true);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "discover/movie" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getTvShows: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, "", "", true);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "discover/tv" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    }
+
+};
+
+theMovieDb.find = {
+    getById: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id", "external_source"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "find/" + options.id + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    }
+};
+
+theMovieDb.genres = {
+    getList: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, "", "", true);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "genre/list" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getMovies: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "genre/" + options.id + "/movies" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    }
+
+};
+
+theMovieDb.jobs = {
+    getList: function (success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 2);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "job/list" + theMovieDb.common.generateQuery()
+            },
+            success,
+            error
+        );
+    }
+};
+
+theMovieDb.keywords = {
+    getById: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "keyword/" + options.id + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getMovies: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "keyword/" + options.id + "/movies" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    }
+};
+
+theMovieDb.lists = {
+    getById: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "list/" + options.id + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getStatusById: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id", "movie_id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "list/" + options.id + "/item_status" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    addList: function (options, success, error) {
+        'use strict';
+
+        var body;
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["session_id", "name", "description"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        body = {
+            "name": options.name,
+            "description": options.description
+        };
+
+        delete options.name;
+        delete options.description;
+
+        if(options.hasOwnProperty("language")) {
+            body["language"] = options.language;
+
+            delete options.language;
+        }
+
+        theMovieDb.common.client(
+            {
+                method:  "POST",
+                status: 201,
+                url: "list" + theMovieDb.common.generateQuery(options),
+                body: body
+            },
+            success,
+            error
+        );
+    },
+    addItem: function (options, success, error) {
+        'use strict';
+
+        var body;
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["session_id", "id", "media_id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        body = {
+            "media_id": options.media_id
+        };
+
+        theMovieDb.common.client(
+            {
+                method:  "POST",
+                status: 201,
+                url: "list/" + options.id + "/add_item" + theMovieDb.common.generateQuery(options),
+                body: body
+            },
+            success,
+            error
+        );
+    },
+    removeItem: function (options, success, error) {
+        'use strict';
+
+        var body;
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["session_id", "id", "media_id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        body = {
+            "media_id": options.media_id
+        };
+
+        theMovieDb.common.client(
+            {
+                method:  "POST",
+                status: 201,
+                url: "list/" + options.id + "/remove_item" + theMovieDb.common.generateQuery(options),
+                body: body
+            },
+            success,
+            error
+        );
+    },
+    removeList: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["session_id", "id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                method:  "DELETE",
+                status: 204,
+                url: "list/" + options.id + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    clearList: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["session_id", "id", "confirm"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                method:  "POST",
+                status: 204,
+                body: {},
+                url: "list/" + options.id + "/clear" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    }
+};
+
+theMovieDb.movies = {
+    getById: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "movie/" + options.id + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getAlternativeTitles: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "movie/" + options.id + "/alternative_titles" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getCredits: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "movie/" + options.id + "/credits" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getImages: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "movie/" + options.id + "/images" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getKeywords: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "movie/" + options.id + "/keywords" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getReleases: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "movie/" + options.id + "/releases" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getTrailers: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "movie/" + options.id + "/trailers" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getVideos: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "movie/" + options.id + "/videos" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getTranslations: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "movie/" + options.id + "/translations" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getSimilarMovies: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "movie/" + options.id + "/similar_movies" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getReviews: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "movie/" + options.id + "/reviews" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getLists: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "movie/" + options.id + "/lists" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getChanges: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "movie/" + options.id + "/changes" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getLatest: function (success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 2);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "movie/latest" + theMovieDb.common.generateQuery()
+            },
+            success,
+            error
+        );
+    },
+    getUpcoming: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, "", "", true);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "movie/upcoming" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getNowPlaying: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, "", "", true);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "movie/now_playing" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getPopular: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, "", "", true);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "movie/popular" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getTopRated: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, "", "", true);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "movie/top_rated" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getStatus: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["session_id", "id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "movie/" + options.id + "/account_states" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    rate: function (options, rate, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 4, options, ["session_id", "id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                method:  "POST",
+                status: 201,
+                url: "movie/" + options.id + "/rating" + theMovieDb.common.generateQuery(options),
+                body: { "value": rate }
+            },
+            success,
+            error
+        );
+    },
+    rateGuest: function (options, rate, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 4, options, ["guest_session_id", "id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                method:  "POST",
+                status: 201,
+                url: "movie/" + options.id + "/rating" + theMovieDb.common.generateQuery(options),
+                body: { "value": rate }
+            },
+            success,
+            error
+        );
+    }
+};
+
+theMovieDb.networks = {
+    getById: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "network/" + options.id + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    }
+};
+
+theMovieDb.people = {
+    getById: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "person/" + options.id + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getMovieCredits: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "person/" + options.id + "/movie_credits" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getTvCredits: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "person/" + options.id + "/tv_credits" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getCredits: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "person/" + options.id + "/combined_credits" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getExternalIds: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "person/" + options.id + "/external_ids" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getImages: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "person/" + options.id + "/images" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+	getTaggedImages: function(options, sucess, error) {
+		'use strict';
+
+		theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+		 theMovieDb.common.client(
+            {
+                url: "person/" + options.id + "/tagged_images" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+	},
+    getChanges: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "person/" + options.id + "/changes" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getPopular: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, "", "", true);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "person/popular" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getLatest: function (success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 2);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "person/latest" + theMovieDb.common.generateQuery()
+            },
+            success,
+            error
+        );
+    }
+};
+
+theMovieDb.reviews = {
+    getById: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "review/" + options.id + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    }
+};
+
+theMovieDb.search = {
+    getMovie: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["query"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "search/movie" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getCollection: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["query"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "search/collection" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getTv: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["query"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "search/tv" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getPerson: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["query"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "search/person" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getList: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["query"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "search/list" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getCompany: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["query"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "search/company" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getKeyword: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["query"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "search/keyword" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    }
+};
+
+theMovieDb.timezones = {
+    getList: function (success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 2);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "timezones/list" + theMovieDb.common.generateQuery()
+            },
+            success,
+            error
+        );
+    }
+};
+
+theMovieDb.tv = {
+    getById: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "tv/" + options.id + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getSimilar: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "tv/" + options.id + "/similar" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getCredits: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "tv/" + options.id + "/credits" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getExternalIds: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "tv/" + options.id + "/external_ids" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getImages: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "tv/" + options.id + "/images" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getTranslations: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "tv/" + options.id + "/translations" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getOnTheAir: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, "", "", true);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "tv/on_the_air" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getAiringToday: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, "", "", true);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "tv/airing_today" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getTopRated: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, "", "", true);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "tv/top_rated" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getPopular: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, "", "", true);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "tv/popular" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    }
+};
+
+theMovieDb.tvSeasons = {
+    getById: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["season_number", "id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "tv/" + options.id + "/season/" + options.season_number + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getCredits: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["season_number", "id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "tv/" + options.id + "/season/" + options.season_number + "/credits" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getExternalIds: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["season_number", "id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "tv/" + options.id + "/season/" + options.season_number + "/external_ids" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getImages: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["season_number", "id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "tv/" + options.id + "/season/" + options.season_number + "/images" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    }
+};
+
+theMovieDb.tvEpisodes = {
+    getById: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["episode_number", "season_number", "id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "tv/" + options.id + "/season/" + options.season_number + "/episode/" + options.episode_number + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getCredits: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["episode_number", "season_number", "id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "tv/" + options.id + "/season/" + options.season_number + "/episode/" + options.episode_number + "/credits" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getExternalIds: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["episode_number", "season_number", "id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "tv/" + options.id + "/season/" + options.season_number + "/episode/" + options.episode_number + "/external_ids" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    },
+    getImages: function (options, success, error) {
+        'use strict';
+
+        theMovieDb.common.validateRequired(arguments, 3, options, ["episode_number", "season_number", "id"]);
+
+        theMovieDb.common.validateCallbacks([success, error]);
+
+        theMovieDb.common.client(
+            {
+                url: "tv/" + options.id + "/season/" + options.season_number + "/episode/" + options.episode_number + "/images" + theMovieDb.common.generateQuery(options)
+            },
+            success,
+            error
+        );
+    }
+};
+</script>
+<script>var words = {
+  enter: "Please enter a TV-Show:"
+}
+
+
+var recents = [];
+var months = [];
+var parentUrl = document.referrer; //get url of shln.ml
+if(Boolean(parentUrl)){
+  var lastPart = parentUrl.match(/\/\/.*?\/(.*?)\/?(\?.*)?$/)[1]; //get the share-id, if posible
+}
+if(lastPart == "today"){
+
+  alertify.alert("<div id='special'><iframe frameBorder='0' width='80%' height='80%' src='today/index.html'></iframe></div>");
+  //give the "today" page if the share-id is today
+}
+else if(lastPart == "myshows"){
+  document.body.innerHTML = "<iframe width='100%' height='100%' seamless='seamless' marginheight='0' marginwidth='0' frameBorder='0' style='border: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px' src='http://van-der-noord.nl/whensmyshow/myshows'></iframe>"
+}
+else{
+
+  theMovieDb.tv.getById({"id":lastPart}, function(data) {
+    data = JSON.parse(data); // parse the data
+    name = data.name; // get the name
+    document.getElementsByName("inputShow")[0].placeholder = name; // set the name as placeholder
+    getSerie(name); // search for the show
+  }, function(error){})
+}
+
+
+function getSerie(serie) {
+  var movie = serie; // movie is just a keyword
+  function ALLgo() {
+    theMovieDb.search.getTv({"query":movie}, function(data) {
+      //success callback
+      var data = JSON.parse(data);// parse it
+
+      var results = data.results; // get the 'results'
+      results = results[0]; // get the first (best) result
+      if(results == undefined) { // if it isn't a known show
+      window.countDown = "show not found"; // say it isn't a show
+    }
+    id = results.id; // get the show id
+
+
+    var background = results.backdrop_path; // get the show background
+    background = "https://image.tmdb.org/t/p/original" + background; // set the background url
+    background = "url(" + background + ")";
+    document.body.style.backgroundImage = background; // set the background
+
+
+    days = 0;
+    weeks = 0;
+    months = 0;
+
+
+    theMovieDb.tv.getById({"id":id}, function(data) {
+      //success callback
+      var data = JSON.parse(data); // parse the data
+      var length = data.seasons.length - 1; //get the amount of seasons
+      var seasons = data.seasons[length]; // get the last season
+      document.getElementById("inputShow").value = data.name;
+
+
+      showID = data.id;
+      var otherSeasons = seasons;
+      if(otherSeasons.air_date == null){otherSeasons = data.seasons[length - 1]}
+      var DATAID = data.id
+
+      theMovieDb.tvSeasons.getById({"id":data.id, "season_number": otherSeasons.season_number},
+      function(data){
+        var data = JSON.parse(data);
+
+        if(data.episodes.length < 7){
+          otherSeasons.season_number = otherSeasons.season_number - 1;
+          theMovieDb.tvSeasons.getById({"id":DATAID, "season_number": (otherSeasons.season_number)},
+          function(data){
+            var data = JSON.parse(data);
+            function giveNames() {
+              iF = i;
+              u = i + 1
+              epLen = data.episodes[data.episodes.length - 1 - i]
+
+              if(Boolean(document.getElementById("recent" + i)) && Boolean(epLen)){
+
+                var sesnen = epLen.season_number
+                var epnen = epLen.episode_number
+                var sepnen = epLen.name
+                var arda = epLen.air_date
+
+                var thies = "<table><td style='height:20%'><center><span style='font-family:Arial; color:black; text-decoration: none; background-color: white; width:100%''>" + sesnen + 'x' + epnen + ": <br>" + sepnen + "<br>"+ arda +"</span></center></td></table>";
+                console.log(u.toString())
+                var thisId = "recent" + u.toString();
+                var text = thies;
+                document.getElementById(thisId).innerHTML = text;
+                theMovieDb.tvEpisodes.getImages({"id": showID, "season_number": epLen.season_number, "episode_number": epLen.episode_number},
+                function(data){
+                  var data = JSON.parse(data);
+                  if(Boolean(data.stills[0])){
+                    still = data.stills[0].file_path;
+                    var epStil = "https://image.tmdb.org/t/p/original" + still;
+                    var epStil = "url(" + epStil + ")";
+                    epStilArray.push(epStil);
+
+                    document.getElementsByClassName("recent")[epStilArray.length - 1].style.backgroundImage = epStil;}
+
+                  }, function(error){})
+                }
+
+              }
+              for(var i = 0; i < 7; i++) {
+                giveNames()
+              }
+            },
+            function(error){})
+          }
+          epStilArray = [];
+          for(var i = 0; i < 6; i++) {
+            iF = i;
+            u = i + 1
+            epLen = data.episodes[data.episodes.length - 1 - i]
+
+            if(Boolean(epLen)){
+              var sesnen = epLen.season_number
+              var epnen = epLen.episode_number
+              var sepnen = epLen.name
+              var arda = epLen.air_date
+
+              var thies = "<table><td style='height:20%'><center><span style='font-family:Arial; color:black; text-decoration: none; background-color: white; width:100%''>" + sesnen + 'x' + epnen + ": <br>" + sepnen + "<br>"+ arda +"</span></center></td></table>";
+              var thisId = "recent" + u.toString();
+              var text = thies;
+              document.getElementById(thisId).innerHTML = text;
+              theMovieDb.tvEpisodes.getImages({"id": showID, "season_number": epLen.season_number, "episode_number": epLen.episode_number},
+              function(data){
+                var data = JSON.parse(data);
+                if(Boolean(data.stills[0])){
+                  still = data.stills[0].file_path;
+                  var epStil = "https://image.tmdb.org/t/p/original" + still;
+                  var epStil = "url(" + epStil + ")";
+                  epStilArray.push(epStil);
+                  //console.log(epStilArray);
+                  document.getElementsByClassName("recent")[epStilArray.length - 1].style.backgroundImage = epStil;}
+                },
+                function(error){})
+              }
+              else{
+                console.log(data)
+
+              }
+            }
+          },
+          function(error){}
+        )
+
+        var currentTime = formatDate(new Date()) // get current date in proper format
+        if(data.status == "Ended"){countDown = "Ended"}
+        else if(currentTime < seasons.air_date) {
+
+
+          countDown = seasons.air_date // set the countdown if the next episode is known
+        }
+        else if(seasons.air_date === null){
+          countDown = "No known next season"} // if we know there is a next season but not when display this
+          else
+          {number = seasons.season_number; // give seasonamount
+            theMovieDb.tvSeasons.getById({"id":id, "season_number": number}, // get info about the next season
+            function(data) {
+              var data = JSON.parse(data); // parse data
+              var episodes = data.episodes; // get the episodes-info
+              var seLength = episodes.length - 1; // get the amount of episodes
+              var count = seLength;
+              while(count > -1){
+                var curEp = data.episodes[count].air_date // get when the next episode airs
+                var episodeName;
+                window.episodeName = data.episodes[count].name; // set the next episodename
+                window.episodeInfo = data.episodes[count].overview; // set the next episodes info
+                var curEp2 = data.episodes[count - 1].air_date // get the next episodes air date
+                count-- // count down
+
+
+
+                if(curEp2 < currentTime) { // if latest episode has been selected
+                  count = -2; // stop counting
+                  if(curEp === currentTime) { window.countDown = "It airs today"} // if the episode airs today
+                  else if(curEp < currentTime) {
+                    window.countDown = "No next episode known"} // if the episode has been aired
+                    else if(curEp > currentTime) { window.countDown = curEp; } // if the episode is in the known future
+
+
+
+
+
+                  }
+                }
+
+
+
+
+              }, function(error) {})
+
+            }
+
+          }, function(error) {
+            //error callback
+          });
+
+
+
+        }, function(error) {
+          //error callback
+        });
+
+      };
+      ALLgo();
+
+      setTimeout(function dunno() {countDown = window.countDown;episodeName; episodeName = window.episodeName; episodeInfo = window.episodeInfo; nextStep = countDown}, 1000);
+      var episodeName;
+
+      var nextStep = window.nextStep;
+      var episodeName = window.episodeName;
+      var episodeInfo = window.episodeInfo;
+      setTimeout(function dunno() {
+        if(nextStep != "Ended" && nextStep != "No next episode known" && nextStep != "Show not found" && nextStep != "It airs today" && nextStep != "No known next season" && nextStep != undefined){
+          var year = nextStep.substring(0, 4);
+          var year = year - 1 + 1; // now it isn\'t a string anymore :D
+          var month = nextStep.substring(5, 7)
+          var month = month - 1 + 1;
+          if(month.toString().length == 1){month = 0 + month.toString()}
+          var day = nextStep.substring(8, 10);
+          var day = day -1 + 1; // make it into a number in stead of string
+          if(day.toString().length == 1){day = 0 + day.toString()}
+          theDate = year + "-" +month+ "-" +day;
+
+          var until = time.until(theDate)
+
+          difYear = until.years
+          difMonth = until.months
+          difWeek = until.weeks
+          difDay = until.days
+          var repText1;
+          var repText2
+          var repText3;
+          var repText4;
+          var enter = "<br>"
+          if(difYear === 1){repText1 = difYear + " year" + enter}
+          else if(difYear === 0) {repText1 = ""}
+          else {repText1 = difYear + " years" + enter}
+          if(difMonth === 1){repText2 = difMonth + " month" + enter}
+          else if(difMonth === 0) {repText2 = ""}
+          else {repText2 = difMonth + " months" + enter}
+          if(difWeek === 1) {repText4 = difWeek + " week" + enter}
+          else if(difWeek === 0) {repText4 = ""}
+          else {repText4 = difWeek + " weeks" + enter}
+          if (difDay === 1) {repText3 = difDay + " day "}
+          else if(difDay === 0) {repText3 = ""}
+          else {repText3 = difDay + " days "}
+          if(episodeName == "" || episodeName == undefined) {var after = "to go"; var pro = ""}
+          else {var after = ""; var pro = "'" + episodeName + "'" + " premiers in "}
+
+          var yNan = isNaN(difYear);
+          var mNan = isNaN(difMonth);
+          var dNan = isNaN(difDay);
+
+          if(yNan || mNan || dNan) {
+            if(nextStep != "It airs today"){
+              var replaceText = "Show not found"
+            }
+          }
+          else {var replaceText = pro + repText1 + repText2 + repText4 + repText3 + after;}
+
+
+          document.getElementById("insert").innerHTML = replaceText;
+
+          var tweet = "https://twitter.com/share?url=http://wsms.ml/" + id + "&text=" + movie + ": " + replaceText + "&url=http://van-der-noord.nl/whensmyshow/#show"
+          var facebook = "https://www.facebook.com/sharer/sharer.php?app_id=113869198637480&sdk=joey&u=http%3A%2F%2Fwsms.ml%2F" + id + "&display=popup&ref=plugin&src=share_button"
+          document.getElementById("tweetURL").href = tweet;
+          document.getElementById("FBUrl").href = facebook;
+
+          if(Boolean(episodeInfo)){
+            var first_three = episodeInfo.match(/(\w+\s){3}\w+/);
+
+            regexp = new RegExp('(' + first_three[0] + ')?.*'); //fetches first 3 words and makes regural expression to lookbehind this positively
+            var output = episodeInfo.replace(regexp, function($0, $1){     //mimicks positive lookbehind
+              return $1 ? $1 + '...' : $0;
+            });
+
+            document.getElementById("insInf").innerHTML = output;
+          }
+
+
+
+
+        }
+        else if(nextStep == "Ended") {document.getElementById("insert").innerHTML = "This show has ended.";}
+        else if(nextStep == "No next episode known") {document.getElementById("insert").innerHTML = "We don\'t know when the next episode airs";}
+        else if(nextStep == "Show not found") {document.getElementById("insert").innerHTML = "We can\'t find that show!"}
+        else if(nextStep == "It airs today") {
+          document.getElementById("insert").innerHTML = "It airs today!"
+          var tweet = "https://twitter.com/share?url=http://wsms.ml/" + id + "&text=" + movie + ": " + episodeName + " airs today!" + "&url=http://van-der-noord.nl/whensmyshow/#show"
+          var facebook = "https://www.facebook.com/sharer/sharer.php?app_id=113869198637480&sdk=joey&u=http%3A%2F%2Fwsms.ml%2F" + id + "&display=popup&ref=plugin&src=share_button"
+          document.getElementById("tweetURL").href = tweet;
+          document.getElementById("FBUrl").href = facebook;
+
+
+          var first_three = episodeInfo.match(/(\w+\s){3}\w+/);
+
+          regexp = new RegExp('(' + first_three[0] + ')?.*'); //fetches first 3 words and makes regural expression to lookbehind this positively
+          var output = episodeInfo.replace(regexp, function($0, $1){     //mimicks positive lookbehind
+            return $1 ? $1 + '...' : $0;
+          });
+
+          document.getElementById("insInf").innerHTML = output;
+
+        }
+        else if(nextStep == "No known next season") {document.getElementById("insert").innerHTML = "We don\'t know when the next season airs";}
+        else {document.getElementById("insert").innerHTML = "Something went wrong. Please try again";}
+
+      }, 1100);
+
+    };
+</script>
+<script>
+document.onkeydown = function(e) {
+  e = e || event
+  if (e.keyCode == 13) {
+    var input = document.getElementById('inputShow').value;
+    input = input.toLowerCase();
+    if(window.name.indexOf('iframe_canvas_fb') != -1){
+      // in Facebook
+
+      FB.AppEvents.logEvent('user typed ' + input);
+      console.log("I told facebook you typed " + input)
+    }
+    episodeName = null;
+    episodeInfo = null;
+    first_three = null;
+    output = null;
+    recentsLength = recents.length
+    var popularText = "<h1>Recent Episodes</h1>";
+    var seenText = "Already seen all episodes? Click here to see similar shows!";
+    document.getElementById("recentsT").innerHTML = popularText;
+    document.getElementById("seenText").innerHTML = seenText;
+    document.getElementById("insInf").innerHTML = "";
+    for(var i = 0; i < 6; i++) {
+      var u = i + 1;
+      document.getElementsByClassName("recent")[i].style.backgroundImage = "";
+      var thisId = "recent" + u.toString();
+      document.getElementById(thisId).innerHTML = "";
+    }
+
+
+    getSerie(input);
+
+
+
+    //popular
+    theMovieDb.tv.getPopular({}, function(data){
+      var data = JSON.parse(data);
+      var length = data.results.length -1
+      var results = data.results;
+      switch(input){
+        case results[0].name.toLowerCase():
+        case results[1].name.toLowerCase():
+        case results[2].name.toLowerCase():
+        case results[3].name.toLowerCase():
+        case results[4].name.toLowerCase():
+        case results[5].name.toLowerCase():
+        case results[6].name.toLowerCase():
+        case results[7].name.toLowerCase():
+        case results[8].name.toLowerCase():
+        case results[9].name.toLowerCase():
+        case results[10].name.toLowerCase():
+        case results[11].name.toLowerCase():
+        case results[12].name.toLowerCase():
+        case results[13].name.toLowerCase():
+        case results[14].name.toLowerCase():
+        case results[15].name.toLowerCase():
+        case results[16].name.toLowerCase():
+        case results[17].name.toLowerCase():
+        case results[18].name.toLowerCase():
+        case results[19].name.toLowerCase():
+        document.getElementById("featured").innerHTML = "This show is trending";
+        document.getElementById("featured").style.width = "13em";
+        break;
+        case featuredS[0]:
+        case featuredS[1]:
+        case featuredS[2]:
+        case featuredS[3]:
+        case featuredS[4]:
+        case featuredS[5]:
+        case featuredS[6]:
+        case featuredS[7]:
+        case featuredS[8]:
+        case featuredS[9]:
+        document.getElementById("featured").innerHTML = "This show is featured";
+        document.getElementById("featured").style.width = "13em";
+
+        break;
+        default:
+        document.getElementById("featured").innerHTML = "";
+        document.getElementById("featured").style.width = "0em";
+
+      }
+
+    }, function(error){})
+
+
+
+
+
+  }
+}
+var featuredS = ["adventure time", "sherlock", "gotham", "american horror story", "under the dome", "the flash", "silicon valley","forever","mr. robot", "orphan black", "orange is the new black"]
+
+//random background
+var random = Math.random() * (featuredS.length - 1);
+random = Math.floor(random);
+randomS = featuredS[random];
+
+document.getElementsByName("inputShow")[0].placeholder = "e.g. " + randomS;
+random = featuredS[random];
+
+
+
+
+theMovieDb.search.getTv({"query":random}, function(data) {
+  var data = JSON.parse(data);
+  var Rid = data.results[0];
+
+  var background = Rid.backdrop_path;
+  background = "https://image.tmdb.org/t/p/original" + background;
+  background = "url(" + background + ")";
+  document.body.style.backgroundImage = background;
+
+
+
+
+}, function(error){})
+
+
+//similar
+function similar(){
+  var input = document.getElementById('inputShow').value;
+  theMovieDb.search.getTv({"query":input}, function(data) {
+    var data = JSON.parse(data);
+    var id = data.results[0].id;
+    theMovieDb.tv.getSimilar({"id":id}, function(data) {
+      var data = JSON.parse(data)
+      for(var i = 0; i < 6; i++){
+        var u = i + 1;
+        var name = data.results[i].name;
+        var backdrop_path = data.results[i].backdrop_path;
+        var id = data.results[i].id;
+        console.log(name);
+        console.log(backdrop_path);
+        document.getElementById("recent" + u).innerHTML="<center><a style='text-decoration:none' href='http://wsms.ml/" + id + "'><span style='font-family:Arial; color:black; text-decoration: none; background-color: white; width:100%'>" + data.results[i].name + "</span></a></center>";
+        var poster = "https://image.tmdb.org/t/p/original/" + backdrop_path;
+        var background = "url(" + poster + ")"
+        document.getElementsByClassName("recent")[i].style.backgroundImage = background;
+      }
+
+
+    }, function(error){})
+
+  }, function(error){})
+}
+
+
+//popular
+var popularText = "<h1>Popular TV-Shows</h1>";
+document.getElementById("recentsT").innerHTML = popularText;
+theMovieDb.tv.getPopular({}, function(data){
+  var data = JSON.parse(data);
+
+  for(var i = 0; i < 7; i++){
+    var u = i + 1;
+    var id = data.results[i].id;
+
+
+
+    if(i < 6){
+      document.getElementById("recent" + u).innerHTML="<center><a style='text-decoration:none' href='http://wsms.ml/" + id + "'><span style='font-family:Arial; color:black; text-decoration: none; background-color: white; width:100%'>" + data.results[i].name + "</span></a></center>";
+
+
+      var poster = "https://image.tmdb.org/t/p/original/" + data.results[i].poster_path;
+      var background = "url(" + poster + ")"
+      document.getElementsByClassName("recent")[i].style.backgroundImage = background;
+    }
+  }
+}, function(error){
+  console.log(error)
+})
+</script>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+.recent {
+  background-color: white;
+  background-size: cover;
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)';
+  filter: alpha(opacity=100);
+  opacity: 1;
+  color:black;
+  float: left;
+  width: 13.5%;
+  height: 75%;
+  margin-right: 1.5%;
+  margin-left: 1.5%;
+}
+body {
+background-size: cover;
+}
+body {
+background-size: cover;
+}
+table {
+    border: 0px solid black;
+    height: 61%;
+    width: 100%
+}
+
+#table1 {
+  height:30%
+}
+
+input[type="text"] {
+  display: block;
+  margin: 0;
+  width: 100%;
+
+  font-size: 18px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  padding: 10px;
+ border: solid 1px #dcdcdc;
+ transition: box-shadow 0.3s, border 0.3s;
+}
+input[type="text"]:focus, input[type="text"].focus {
+  outline: none;
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+}
+
+
+
+//animation
+body{
+  background: #000;
+  padding-top: 0px;
+
+}
+
+p{
+  color: white;
+  background-color: Black;
+      z-index: 1;
+      /* These three lines are for transparency in all browsers. */
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+      filter: alpha(opacity=50);
+      opacity: .5;
+  font-family: "Courier";
+  font-size: 20px;
+  margin: 10px 0 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 30em;
+
+p:a{
+  color: grey;
+  text-decoration: none;
+}
+
+
+#myTitle {
+  color: white;
+  background-color: Black;
+      z-index: 1;
+      /* These three lines are for transparency in all browsers. */
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+      filter: alpha(opacity=50);
+      opacity: .5;
+  font-family: "Arial";
+  font-size: 20px;
+  margin: 0px 0px 0px 0px;
+  padding-left: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 30em;
+}
+
+#myTd {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+
+}
+}
+#featured {
+font-size: 50px;text-align: left; font-family: Courier; color: black;
+background-color: white;
+    z-index: 1;
+    /* These three lines are for transparency in all browsers. */
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=50)';
+    filter: alpha(opacity=50);
+    opacity: .5;
+font-family: "Courier";
+font-size: 20px;
+margin: 10px 0 0 10px;
+white-space: nowrap;
+overflow: hidden;
+height: 1.63em;
+line-height: 175%;
+width: 0em;
+}
+
+#tweet, #facebook, #about {
+  background-color: white;
+  width: 2em;
+  height: 2.05em;
+  z-index: 1;
+  /* These three lines are for transparency in all browsers. */
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=50)';
+  filter: alpha(opacity=50);
+  opacity: .5;
+  overflow: hidden;
+  float: left;
+}

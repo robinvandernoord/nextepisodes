@@ -1,0 +1,141 @@
+<html>
+<head>
+  <title>Next Episodes</title>
+  <!-- made by Trial and Success -->
+<!--favicons and all-->
+<link rel="icon" sizes="any" mask href="http://van-der-noord.nl/nextepisodeslogo.svg">
+<link rel="apple-touch-icon" sizes="57x57" href="http://van-der-noord.nl/whensmyshow/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="http://van-der-noord.nl/whensmyshow/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="http://van-der-noord.nl/whensmyshow/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="http://van-der-noord.nl/whensmyshow/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="http://van-der-noord.nl/whensmyshow/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="http://van-der-noord.nl/whensmyshow/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="http://van-der-noord.nl/whensmyshow/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="http://van-der-noord.nl/whensmyshow/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://van-der-noord.nl/whensmyshow/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="http://van-der-noord.nl/whensmyshow/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="http://van-der-noord.nl/whensmyshow/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="http://van-der-noord.nl/whensmyshow/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="http://van-der-noord.nl/whensmyshow/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="http://van-der-noord.nl/whensmyshow/manifest.json">
+<link rel="shortcut icon" href="http://van-der-noord.nl/whensmyshow/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="Next Episodes">
+<meta name="application-name" content="Next Episodes">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="http://van-der-noord.nl/whensmyshow/mstile-144x144.png">
+<meta name="msapplication-config" content="http://van-der-noord.nl/whensmyshow/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!--End favicons-->
+<!--Meta info for google and facebook-->
+<meta name="description" content="Find out when your favorite tv show airs a new episode!" />
+<meta name="keywords" content="tv, show, gotham, sherlock, orange, is, the, new, black, TVDB, API, trakt, silicon, valley, website, software, free, online, no download, twitter, Facebook, search" />
+<meta name="author" content="Trial and Success">
+<meta name="robots" content="index, follow">
+<meta name="revisit-after" content="3 month">
+<meta property="og:url" content="http://van-der-noord.nl/whensmyshow/" />
+<meta property="og:title" content="When's my show?" />
+<meta property="og:description" content="Find out when your favorite tv show airs a new episode!" />
+<meta property="og:type" content="website" />
+<!--meta property="og:image" content="http://cdn.marketplaceimages.windowsphone.com/v8/images/4083859e-87c0-4921-8776-3928d7ea7b55?imageType=ws_icon_large.img" /-->
+<meta property="og:image" content="http://i.imgur.com/RLZNAlM.png" />
+<!--End meta info, start styles + fb en google scripts-->
+<link rel="stylesheet" type="text/css" href="style.css" />
+<title>When's my show?</title>
+<!-- tv, show, search -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<!-- include the core styles -->
+<link rel="stylesheet" href="alertify.core.css" />
+<!-- include a theme, can be included into the core instead of 2 separate files -->
+<link rel="stylesheet" href="alertify.default.css" />
+<script src="alertify.min.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45393908-4', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!--end head-->
+</head>
+<body>
+  <link rel="apple-touch-icon" href="http://i.imgur.com/RLZNAlM.png">
+    <link rel="apple-touch-startup-image" href="http://i.imgur.com/RLZNAlM.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1594313917494736',
+      xfbml      : true,
+      version    : 'v2.3'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "http://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<div id="tweet" ><a target="_blank" id="tweetURL" style="color:black" class="twitter-shar/e-button"
+  href="https://twitter.com/share?text=See when the next episode of your favorite tv show airs on">
+  <i class="fa fa-twitter fa-2x"></i>
+</a></div><a id="FBUrl" style="color:black" target="_blank" href="https://www.facebook.com/sharer/sharer.php?app_id=113869198637480&sdk=joey&u=http%3A%2F%2Fvan-der-noord.nl%2Fwhensmyshow&display=popup&ref=plugin&src=share_button"><div id="facebook"><i class="fa fa-facebook fa-2x"></i></div></a>
+<script>function alertFB() {var maybe = confirm("Would you like to add our app to your facebook page?"); if(maybe){window.location.href= "https://www.facebook.com/dialog/pagetab?app_id=1594313917494736&redirect_uri=https://bit.ly/1M7UNw7"}}</script>
+<div id="about" onclick="alert('Soon there will be a privacy policy, TOS, FAQ, iOS + mac + android apps and an about page. And you can save all of your shows and see their info in one click!>'); alertFB();"><i class="fa fa-users fa-2x"></i></div>
+<script>
+window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+</script>
+<div id="featured" style=""></div>
+<table>
+  <tr>
+      <td id="myTd"><center><div id="myTitle" style="font-size: 50px;text-align: center; font-family: Arial; color: white;
+      background-color: Black;
+          z-index: 1;
+          /* These three lines are for transparency in all browsers. */
+          -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=50)';
+          filter: alpha(opacity=50);
+          opacity: .5;
+      font-family: "Arial";
+      font-size: 20px;
+      margin: 10px 0 0 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 30em;">Please enter a TV-Show:</div><div id="replace">
+        <input placeHolder="text" name="inputShow" id="inputShow" type="text" style="width: 600px; height: 75px; font-size: 50px; text-align: center;"><p id="insert"><span onclick="alertifyPopup()">See what airs today</span></p></input><p id ="insInf" onclick="alert(episodeInfo)"></p></div></center></td>
+<script>function alertifyPopup() {
+  alertify.alert("<div id='special'><iframe frameBorder='0' width='80%' height='80%' src='today/index.html'></iframe></div>");}</script>
+  </tr>
+</table>
+<div width="5em" height="1%" id="recentsT" style="background-color: Black;
+    z-index: 1;
+    /* These three lines are for transparency in all browsers. */
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=75)';
+    filter: alpha(opacity=75);
+    opacity: .75; color:white; width:100%; height:5%"><h2>Recent Episodes</h2></div><div style="height:25%; width:100%; background-color: Black;
+    z-index: 1;
+    /* These three lines are for transparency in all browsers. */
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=75)';
+    filter: alpha(opacity=75);
+    opacity: .75; color:white;" id="recents"><div onclick="similar()" style="font-family:Arial;" id="seenText"></div>
+    <div class="recent" id="recent1"> </div>
+    <div class="recent" id="recent2"></div>
+    <div class="recent" id="recent3"></div>
+    <div class="recent" id="recent4"></div>
+    <div class="recent" id="recent5"></div>
+    <div class="recent" id="recent6"></div>
+    </div>
+    <script src="http://van-der-noord.nl/scripts/time.to.js" type="text/javascript"></script>
+<script src="themoviedb.js"></script>
+<script src="main.js"></script>
+<script src="main2.js"></script>
+
+</body>
+</html>
