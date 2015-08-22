@@ -58,7 +58,7 @@ window.fbAsyncInit = function() {
         location.reload()
       }
   </script>
-  <center><button onclick="edit()" id="form">Show info!</button><button onclick="reset()" id="form">Reset shows</button></center>
+  <center><button onclick="edit()" id="form">Show info!</button><button onclick="reset()" id="round" id="form">Reset shows</button></center>
   <script>
   //javascript detect mobile
   window.mobilecheck = function() {
@@ -83,14 +83,16 @@ bglist = [];
  background = false;
   function tvdb(show, i, always){
 if(show != ""){
-  document.getElementsByClassName("replace")[i].style.display = "block"
+  if(Boolean(document.getElementsByClassName("replace")[i])){
+  document.getElementsByClassName("replace")[i].style.display = "block"}
     theMovieDb.search.getTv({
         "query": show
     }, function(data) {
 
         var data = JSON.parse(data);
         document.getElementById("replace" + i).innerHTML = "We couldn\'t find " + show;
-        var id = data.results[0].id;
+        if(Boolean(data.results[0])){
+        var id = data.results[0].id;}
         var thisname = data.results[0].name;
         document.getElementById("form" + i).value = thisname;
         if(background == false || background == undefined){
@@ -379,7 +381,6 @@ document.onkeydown = function(e) {
   e = e || event
   if (e.keyCode == 13) {
     edit()
-
   }}
 </script>
 
