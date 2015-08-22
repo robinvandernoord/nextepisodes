@@ -53,8 +53,12 @@ window.fbAsyncInit = function() {
           document.body.innerHTML += "<center><input class='form' style='height:4%; font-size: 150%' type='text' id='form" + i + "'></input></center>"
           document.body.innerHTML += "<center><p class='replace' style='height:3% display:none' type='text' id='replace" + i + "'></p></center>"
       }
+      function reset(){
+        localStorage.clear()
+        location.reload()
+      }
   </script>
-  <center><button onclick="edit()" id="form">Show info!</button></center>
+  <center><button onclick="edit()" id="form">Show info!</button><button onclick="reset()" id="form">Reset shows</button></center>
   <script>
   //javascript detect mobile
   window.mobilecheck = function() {
@@ -366,6 +370,7 @@ function edit(){
   localStorage.setItem(show, value);
   setTimeout(function(){ update() }, 100);
 }
+
 
 }
 start();
