@@ -1,0 +1,17 @@
+<html>
+<script>
+var amount = 1;
+function rem(amount){
+  console.log(amount)
+  document.getElementById("holder" + amount).innerHTML = "";
+
+}
+
+function add(){
+  amount++;
+document.getElementById("fill").innerHTML += "<span id='holder"+amount+"'><input></input><span onclick='rem("+amount+")'>-</span><br></span>"
+}
+</script>
+<input></input>
+<br><span id="fill"></span><span onclick="add()">+</span>
+</html>
