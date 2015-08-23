@@ -1,0 +1,103 @@
+body{
+  font-family: arial;
+font-size: 90%;
+background-image: url("http://cdn.desktopwallpapers4.me/wallpapers/abstract/1920x1200/2/15934-tv-test-pattern-1920x1200-abstract-wallpaper.jpg");
+}
+.form, .replace {
+  margin: 4px 0px 4px 0px;
+width: 40%;
+color: white;
+background-color: Gray;
+background-color: gray;
+    z-index: 1;
+    /* These three lines are for transparency in all browsers. */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+    opacity: .7;
+    border: 0
+
+white-space: nowrap;
+overflow: hidden;
+text-align: center;
+
+}
+.normal {
+  margin: 4px 0px 4px 0px;
+  display: none;
+width: 5%;
+background-color: black;
+color: white;
+    z-index: 1;
+    /* These three lines are for transparency in all browsers. */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+    opacity: .7;
+
+white-space: nowrap;
+overflow: hidden;
+text-align: center;
+
+
+
+}
+.form:focus {
+  outline: none;
+    border: solid 1px #707070;
+    box-shadow: 0 0 5px 1px #969696;
+    width: 750;
+    height: 4%
+    text-align: center;
+    font-size: 40px;
+}
+
+.form {
+  font-size: 19px;
+  color: white;
+background-color: grey;
+    z-index: 1;
+    /* These three lines are for transparency in all browsers. */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+    opacity: .7;
+font-family: "Arial";
+white-space: nowrap;
+overflow: hidden;
+//border: 0px;
+
+}
+input {
+  font-size: 92340px;
+  }
+button{
+  font-size: 30px;
+}
+
+button{
+width:100px; /*same as the height*/
+height:100px; /*same as the width*/
+background-color:white;
+border:1px solid white; /*same colour as the background*/
+color:black;
+font-size:1.6em;
+/*set the border-radius at half the size of the width and height*/
+-webkit-border-radius: 50px;
+-moz-border-radius: 50px;
+border-radius: 50px;
+/*give the button a small drop shadow*/
+-webkit-box-shadow: 0 0 10px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 10px rgba(0,0,0, .75);
+box-shadow: 2px 2px 15px rgba(0,0,0, .75);
+-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+filter: alpha(opacity=70);
+opacity: .7;
+}
+/***NOW STYLE THE BUTTON'S HOVER STATE***/
+button:hover{
+background:black;
+color:white;
+border:1px solid black;
+/*reduce the size of the shadow to give a pushed effect*/
+-webkit-box-shadow: 0px 0px 5px rgba(0,0,0, .75);
+-moz-box-shadow: 0px 0px 5px rgba(0,0,0, .75);
+box-shadow: 0px 0px 5px rgba(0,0,0, .75);
+}
