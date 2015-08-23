@@ -4,14 +4,22 @@ var amount = 1;
 function rem(amount){
   console.log(amount)
   document.getElementById("holder" + amount).innerHTML = "";
-
+amount--;
 }
 
 function add(){
   amount++;
-document.getElementById("fill").innerHTML += "<span id='holder"+amount+"'><input></input><span onclick='rem("+amount+")'>-</span><br></span>"
+document.getElementById("fill").innerHTML += "<span id='holder"+amount+"'><input id='input"+amount+"'></input><span onclick='rem("+amount+")'>-</span><br></span>"
+console.log(amount)
+}
+
+function save(){
+  for(var i = 1; i < 1000; i++){
+    document.write(document.getElementById("input" + i).value)
+  }
 }
 </script>
 <input></input>
 <br><span id="fill"></span><span onclick="add()">+</span>
+<button onclick="save()">save</button>
 </html>
