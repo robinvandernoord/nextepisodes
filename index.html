@@ -93,11 +93,13 @@ window.fbAsyncInit = function() {
 
       function del(){
 
-      localStorage.removeItem("show" + amount)
-      amone = amount-1
-        var elem = document.getElementById("holder"+amone);
 
+      amone = amount-1
+      localStorage.removeItem("show" + amone)
+        var elem = document.getElementById("holder"+amone);
+var elem2 = document.getElementById("replace"+amone);
       elem.parentNode.removeChild(elem);
+      elem2.parentNode.removeChild(elem2);
       save()
       amount--;
       }
@@ -105,18 +107,19 @@ window.fbAsyncInit = function() {
       function add(){
       save()
       document.body.innerHTML += "<center><div id='holder"+amount+"'><input class='form' id='form"+amount+"'></input><br></div></center>"
-      document.body.innerHTML += "<center><p class='replace' style='height:3% display:none' type='text' id='replace" + amount + "'></p></center>"
+      document.body.innerHTML += "<center><div id='removable'"+amount+"><p class='replace' style='height:3% display:none' type='text' id='replace" + amount + "'></p></div></center>"
       amount++;
       //console.log(amount)
       load()
+      edit()
       }
 
 load()
   </script>
-  <center><button onclick="edit()" id="form">Show info!</button>
+  <center><button onclick="edit()" id="form">Update info!</button>
     <button onclick="reset()" id="form">Reset shows</button>
-  <button onclick="add()" id="form">add form</button>
-  <button onclick="del()" id="form">remove form</button>
+  <button onclick="add()" id="form">add field</button>
+  <button onclick="del()" id="form">remove field</button>
   </center>
   <script>
   //javascript detect mobile
