@@ -93,7 +93,7 @@ window.fbAsyncInit = function() {
 
       function del(){
 
-      localStorage.removeItem("form" + amount)
+      localStorage.removeItem("show" + amount)
       amone = amount-1
         var elem = document.getElementById("holder"+amone);
 
@@ -394,11 +394,13 @@ if(difD > 6){difD -=7; difW++}
   }}
 
   function update(){
-    for(var i = 1; i < 11; i++){
+    for(var i = 1; i < 1000; i++){
+      if(Boolean(document.getElementById("form" + i))){
     document.getElementById("form" + i).value = localStorage.getItem("show" + i);
     var show = "show" + i;
     var value = document.getElementById("form" + i).value;
     tvdb(value, i, i)
+  }
 }
 
   }
@@ -443,6 +445,13 @@ document.onkeydown = function(e) {
   if (e.keyCode == 13) {
     edit()
   }}
+
+  for(var i = 1; i < localStorage.length; i++){
+  //  if(localStorage.getItem(i) != "" && localStorage.getItem(i) != null){
+    add()
+  //}
+  }
+  edit()
 </script>
 
 
