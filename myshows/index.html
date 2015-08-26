@@ -23,6 +23,7 @@
   <meta name="theme-color" content="#ffffff">
 </head><body>
 <script>
+amount = 1;
 window.fbAsyncInit = function() {
   FB.init({
     appId      : '1605489873043807',
@@ -43,22 +44,83 @@ window.fbAsyncInit = function() {
 </script>
   <script type="text/javascript" src="http://van-der-noord.nl/whensmyshow/themoviedb.js"></script>
   <script type="text/javascript" src="http://van-der-noord.nl/scripts/time.to.js"></script>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" media="all" type="text/css" href="style.css">
 
-  <div class='normal' style="height:100%; width:15%;  vertical-align: center; font-size: 1000% font-color: black; float:left;" >
-<!-- start feedwind code --><script type="text/javascript">document.write('\x3Cscript type="text/javascript" src="' + ('https:' == document.location.protocol ? 'https://' : 'http://') + 'feed.mikle.com/js/rssmikle.js">\x3C/script>');</script><script type="text/javascript">(function() {var params = {rssmikle_url: "http://thetvdb.com/rss/newtoday.php",rssmikle_frame_width: "200",rssmikle_frame_height: "700",frame_height_by_article: "0",rssmikle_target: "_blank",rssmikle_font: "Arial, Helvetica, sans-serif",rssmikle_font_size: "12",rssmikle_border: "off",responsive: "off",rssmikle_css_url: "",text_align: "left",text_align2: "left",corner: "off",scrollbar: "on",autoscroll: "off",scrolldirection: "up",scrollstep: "3",mcspeed: "20",sort: "Off",rssmikle_title: "on",rssmikle_title_sentence: "",rssmikle_title_link: "",rssmikle_title_bgcolor: "#000000",rssmikle_title_color: "#FFFFFF",rssmikle_title_bgimage: "",rssmikle_item_bgcolor: "#000000",rssmikle_item_bgimage: "",rssmikle_item_title_length: "55",rssmikle_item_title_color: "#FFFFFF",rssmikle_item_border_bottom: "on",rssmikle_item_description: "on",item_link: "off",rssmikle_item_description_length: "150",rssmikle_item_description_color: "#FFFFFF",rssmikle_item_date: "gl1",rssmikle_timezone: "Etc/GMT",datetime_format: "%b %e, %Y %l:%M:%S %p",item_description_style: "text+tn",item_thumbnail: "full",item_thumbnail_selection: "auto",article_num: "15",rssmikle_item_podcast: "off",keyword_inc: "",keyword_exc: ""};feedwind_show_widget_iframe(params);})();</script><div style="font-size:10px; text-align:center; width:200px;"><a href="http://feed.mikle.com/" target="_blank" style="color:#CCCCCC;">RSS Feed Widget</a><!--Please display the above link in your web page according to Terms of Service.--></div><!-- end feedwind code -->
     </div>
   <script>
       for (var i = 1; i < 11; i++) {
-          document.body.innerHTML += "<center><input class='form' style='height:4%; font-size: 150%' type='text' id='form" + i + "'></input></center>"
-          document.body.innerHTML += "<center><p class='replace' style='height:3% display:none' type='text' id='replace" + i + "'></p></center>"
+    //      document.body.innerHTML += "<center><input class='form' style='height:4%; font-size: 150%' type='text' id='form" + i + "'></input></center>"
+          document.body.innerHTML += ""
       }
       function reset(){
         localStorage.clear()
         location.reload()
       }
+      if(localStorage.getItem("firstime") == "no" || localStorage.getItem("firsttime") !== null){
+        console.log("welcome back!")
+      }else{console.log("welcome");localStorage.clear(); localStorage.setItem("firsttime", "no")}
+
+      function load(){
+
+        for(var i = 1; i < 1000; i++){
+          if(
+            Boolean(
+              localStorage.getItem("show"+i)
+            )){
+        var item = localStorage.getItem("show"+i);
+        console.log(item);
+        if(
+          Boolean(
+            document.getElementById("form" + i)
+          )){
+      document.getElementById("form" + i).value = item;}
+
+      }
+    }return "done";
+      }
+
+      function save(){
+        for(var i = 0; i < 1000; i++){
+          if(Boolean(document.getElementById("form" + i))){
+            if(Boolean(document.getElementById("form" + i).value)){
+        //  console.log(document.getElementById("input" + i).value)
+        localStorage.setItem("show" + i, document.getElementById("form" + i).value)
+      }
+        }
+        }
+        load()
+      }
+
+      function del(){
+
+
+      amone = amount-1
+      localStorage.removeItem("show" + amone)
+        var elem = document.getElementById("holder"+amone);
+var elem2 = document.getElementById("replace"+amone);
+      elem.parentNode.removeChild(elem);
+      elem2.parentNode.removeChild(elem2);
+      save()
+      amount--;
+      }
+
+      function add(){
+      save()
+      document.body.innerHTML += "<center><div id='holder"+amount+"'><input class='form' id='form"+amount+"'></input><br></div></center>"
+      document.body.innerHTML += "<center><div id='removable'"+amount+"><p class='replace' style='height:3% display:none' type='text' id='replace" + amount + "'></p></div></center>"
+      amount++;
+      //console.log(amount)
+      load()
+      edit()
+      }
+
+load()
   </script>
-  <center><button onclick="edit()" id="form">Show info!</button><button onclick="reset()" id="form">Reset shows</button></center>
+  <center><button onclick="edit()" id="form">Update info!</button>
+    <button onclick="reset()" id="form">Reset shows</button>
+  <button onclick="add()" id="form">add field</button>
+  <button onclick="del()" id="form">remove field</button>
+  </center>
   <script>
   //javascript detect mobile
   window.mobilecheck = function() {
@@ -335,11 +397,13 @@ if(difD > 6){difD -=7; difW++}
   }}
 
   function update(){
-    for(var i = 1; i < 11; i++){
+    for(var i = 1; i < 1000; i++){
+      if(Boolean(document.getElementById("form" + i))){
     document.getElementById("form" + i).value = localStorage.getItem("show" + i);
     var show = "show" + i;
     var value = document.getElementById("form" + i).value;
     tvdb(value, i, i)
+  }
 }
 
   }
@@ -351,7 +415,7 @@ if(difD > 6){difD -=7; difW++}
       if(localStorage.getItem("show1") === null){
       for(var i = 1; i < 11; i++){
         var show = "show" + i;
-        localStorage.setItem(show, "");
+        //localStorage.setItem(show, "");
       }
 } else {
   console.log("info already stored")
@@ -366,11 +430,13 @@ if(difD > 6){difD -=7; difW++}
   }
 }
 function edit(){
-  for(var i = 1; i < 11; i++){
+  for(var i = 0; i < 1000; i++){
+    if(Boolean(document.getElementById("form" + i))){
   var value = document.getElementById("form" + i).value
   var show = "show" + i;
   localStorage.setItem(show, value);
   setTimeout(function(){ update() }, 100);
+}
 }
 
 
@@ -382,6 +448,13 @@ document.onkeydown = function(e) {
   if (e.keyCode == 13) {
     edit()
   }}
+
+  for(var i = 1; i < localStorage.length; i++){
+  //  if(localStorage.getItem(i) != "" && localStorage.getItem(i) != null){
+    add()
+  //}
+  }
+  edit()
 </script>
 
 
