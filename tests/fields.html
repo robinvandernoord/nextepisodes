@@ -1,25 +1,64 @@
 <html>
 <script>
 var amount = 1;
-function rem(amount){
-  console.log(amount)
-  document.getElementById("holder" + amount).innerHTML = "";
-amount--;
-}
+function rem(number){
+    amount--;
+  //console.log(amount)
+localStorage.removeItem(number)
+  var elem = document.getElementById("holder" + number);
 
-function add(){
-  amount++;
-document.getElementById("fill").innerHTML += "<span id='holder"+amount+"'><input id='input"+amount+"'></input><span onclick='rem("+amount+")'>-</span><br></span>"
-console.log(amount)
-}
+elem.parentNode.removeChild(elem);
 
-function save(){
-  for(var i = 1; i < 1000; i++){
-    document.write(document.getElementById("input" + i).value)
+}
+function load(){
+
+  for(var i = 0; i < 1000; i++){
+    if(
+      Boolean(
+        localStorage.getItem(i)
+      )){
+  var item = localStorage.getItem(i);
+  //console.log(item);
+  if(
+    Boolean(
+      document.getElementById("input" + i)
+    )){
+document.getElementById("input" + i).value = item;}
+}
   }
 }
+function save(){
+  for(var i = 0; i < 1000; i++){
+    if(Boolean(document.getElementById("input" + i))){
+  //  console.log(document.getElementById("input" + i).value)
+  localStorage.setItem(i, document.getElementById("input" + i).value)
+
+  }
+  }
+  load()
+}
+
+
+function add(){
+save()
+document.getElementById("fill").innerHTML += "<span id='holder"+amount+"'><input class='fill' id='input"+amount+"'></input><span onclick='rem("+amount+")'>-</span><br></span>"
+amount++;
+//console.log(amount)
+load()
+}
+
+
+
 </script>
-<input></input>
+<input id="input0" class="fill"></input>
 <br><span id="fill"></span><span onclick="add()">+</span>
 <button onclick="save()">save</button>
+<script>
+console.log()
+document.getElementById("input0").value = localStorage.getItem(0)
+console.log("hi")
+for(var i = 1; i < localStorage.length; i++){
+  add()
+}
+</script>
 </html>
