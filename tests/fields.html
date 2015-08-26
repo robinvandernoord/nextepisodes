@@ -1,14 +1,26 @@
 <html>
 <script>
 var amount = 1;
-function rem(number){
+function save(){
+  for(var i = 0; i < 1000; i++){
+    if(Boolean(document.getElementById("input" + i))){
+      if(Boolean(document.getElementById("input" + i).value)){
+  //  console.log(document.getElementById("input" + i).value)
+  localStorage.setItem(i, document.getElementById("input" + i).value)
+}
+  }
+  }
+  load()
+}
+function rem(){
+//  alert(number)
     amount--;
   //console.log(amount)
-localStorage.removeItem(number)
-  var elem = document.getElementById("holder" + number);
+localStorage.removeItem(amount)
+  var elem = document.getElementById("holder" + amount);
 
 elem.parentNode.removeChild(elem);
-
+save()
 }
 function load(){
 
@@ -27,21 +39,12 @@ document.getElementById("input" + i).value = item;}
 }
   }
 }
-function save(){
-  for(var i = 0; i < 1000; i++){
-    if(Boolean(document.getElementById("input" + i))){
-  //  console.log(document.getElementById("input" + i).value)
-  localStorage.setItem(i, document.getElementById("input" + i).value)
 
-  }
-  }
-  load()
-}
 
 
 function add(){
 save()
-document.getElementById("fill").innerHTML += "<span id='holder"+amount+"'><input class='fill' id='input"+amount+"'></input><span onclick='rem("+amount+")'>-</span><br></span>"
+document.getElementById("fill").innerHTML += "<span id='holder"+amount+"'><input class='fill' id='input"+amount+"'></input><br></span>"
 amount++;
 //console.log(amount)
 load()
@@ -53,12 +56,15 @@ load()
 <input id="input0" class="fill"></input>
 <br><span id="fill"></span><span onclick="add()">+</span>
 <button onclick="save()">save</button>
+<span onclick="rem()">-</span>
 <script>
-console.log()
+
 document.getElementById("input0").value = localStorage.getItem(0)
-console.log("hi")
+
 for(var i = 1; i < localStorage.length; i++){
+//  if(localStorage.getItem(i) != "" && localStorage.getItem(i) != null){
   add()
+//}
 }
 </script>
 </html>
