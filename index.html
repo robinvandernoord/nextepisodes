@@ -23,6 +23,7 @@
   <meta name="theme-color" content="#ffffff">
 </head><body>
 <script>
+amount = 1;
 window.fbAsyncInit = function() {
   FB.init({
     appId      : '1605489873043807',
@@ -50,15 +51,62 @@ window.fbAsyncInit = function() {
     </div>
   <script>
       for (var i = 1; i < 11; i++) {
-          document.body.innerHTML += "<center><input class='form' style='height:4%; font-size: 150%' type='text' id='form" + i + "'></input></center>"
+    //      document.body.innerHTML += "<center><input class='form' style='height:4%; font-size: 150%' type='text' id='form" + i + "'></input></center>"
           document.body.innerHTML += "<center><p class='replace' style='height:3% display:none' type='text' id='replace" + i + "'></p></center>"
       }
       function reset(){
         localStorage.clear()
         location.reload()
       }
+      if(localStorage.getItem("firstime") == "no" || localStorage.getItem("firsttime") !== null){
+        console.log("welcome back!")
+      }else{console.log("welcome");localStorage.clear(); localStorage.setItem("firsttime", "no")}
+
+      function load(){
+
+        for(var i = 1; i < 1000; i++){
+          if(
+            Boolean(
+              localStorage.getItem("show"+i)
+            )){
+        var item = localStorage.getItem("show"+i);
+        console.log(item);
+        if(
+          Boolean(
+            document.getElementById("form" + i)
+          )){
+      document.getElementById("form" + i).value = item;}
+
+      }
+    }return "done";
+      }
+
+      function del(){
+
+      localStorage.removeItem("show" + amount)
+      amone = amount-1
+        var elem = document.getElementById("form"+amone);
+
+      elem.parentNode.removeChild(elem);
+      //save()
+      amount--;
+      }
+
+      function add(){
+      //save()
+      document.body.innerHTML += "<center><div id='form"+amount+"'><input class='form' id='form'></input><br></div></center>"
+      amount++;
+      //console.log(amount)
+      load()
+      }
+
+load()
   </script>
-  <center><button onclick="edit()" id="form">Show info!</button><button onclick="reset()" id="form">Reset shows</button></center>
+  <center><button onclick="edit()" id="form">Show info!</button>
+    <button onclick="reset()" id="form">Reset shows</button>
+  <button onclick="add()" id="form">add form</button>
+  <button onclick="del()" id="form">remove form</button>
+  </center>
   <script>
   //javascript detect mobile
   window.mobilecheck = function() {
