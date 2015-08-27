@@ -1,0 +1,8 @@
+{
+  "name"    : "My Shows",
+  "version" : "1.0.0",
+  "scripts": {
+      "install": "electron-rebuild"
+  },
+  "main"    : "startup.js"
+}
