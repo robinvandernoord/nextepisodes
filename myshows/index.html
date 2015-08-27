@@ -24,23 +24,6 @@
 </head><body>
 <script>
 amount = 1;
-window.fbAsyncInit = function() {
-  FB.init({
-    appId      : '1605489873043807',
-    xfbml      : true,
-    version    : 'v2.3'
-  });
-
-  // ADD ADDITIONAL FACEBOOK CODE HERE
-};
-
-(function(d, s, id){
-   var js, fjs = d.getElementsByTagName(s)[0];
-   if (d.getElementById(id)) {return;}
-   js = d.createElement(s); js.id = id;
-   js.src = "//connect.facebook.net/en_US/sdk.js";
-   fjs.parentNode.insertBefore(js, fjs);
- }(document, 'script', 'facebook-jssdk'));
 </script>
   <script type="text/javascript" src="http://van-der-noord.nl/whensmyshow/themoviedb.js"></script>
   <script type="text/javascript" src="http://van-der-noord.nl/scripts/time.to.js"></script>
@@ -68,7 +51,6 @@ window.fbAsyncInit = function() {
               localStorage.getItem("show"+i)
             )){
         var item = localStorage.getItem("show"+i);
-        console.log(item);
         if(
           Boolean(
             document.getElementById("form" + i)
@@ -83,7 +65,6 @@ window.fbAsyncInit = function() {
         for(var i = 0; i < 1000; i++){
           if(Boolean(document.getElementById("form" + i))){
             if(Boolean(document.getElementById("form" + i).value)){
-        //  console.log(document.getElementById("input" + i).value)
         localStorage.setItem("show" + i, document.getElementById("form" + i).value)
       }
         }
@@ -109,7 +90,6 @@ var elem2 = document.getElementById("replace"+amone);
       document.body.innerHTML += "<center><div id='holder"+amount+"'><input class='form' id='form"+amount+"'></input><br></div></center>"
       document.body.innerHTML += "<center><div id='removable'"+amount+"><p class='replace' style='height:3% display:none' type='text' id='replace" + amount + "'></p></div></center>"
       amount++;
-      //console.log(amount)
       load()
       edit()
       }
@@ -121,6 +101,7 @@ load()
   <button onclick="add()" id="form">add field</button>
   <button onclick="del()" id="form">remove field</button>
   </center>
+  <script type="text/javascript" src="http://van-der-noord.nl/scripts/time.to.js"></script>
   <script>
   //javascript detect mobile
   window.mobilecheck = function() {
@@ -143,258 +124,105 @@ if(window.mobilecheck() == true){
 
 bglist = [];
  background = false;
-  function tvdb(show, i, always){
-if(show != ""){
-  if(Boolean(document.getElementsByClassName("replace")[i])){
-  document.getElementsByClassName("replace")[i].style.display = "block"}
-    theMovieDb.search.getTv({
-        "query": show
-    }, function(data) {
 
-        var data = JSON.parse(data);
-        document.getElementById("replace" + i).innerHTML = "We couldn\'t find " + show;
-        if(Boolean(data.results[0])){
-        var id = data.results[0].id;}
-        var thisname = data.results[0].name;
-        document.getElementById("form" + i).value = thisname;
-        if(background == false || background == undefined){
-        //  background = true;
-         bg = "http://image.tmdb.org/t/p/original/" + data.results[0].backdrop_path;
-         bglist[bglist.length] = bg;
-         var random = Math.round(Math.random() * bglist.length);
-         //console.log(random)
-         bg = bglist[random]
-        var path = document.body.style;
-        path.backgroundImage = "url('"+bg+"')"
-      }
-        theMovieDb.tv.getById({
-            "id": id
-        }, function(data) {
-        var data = JSON.parse(data);
-        var showname = data.name
-
-if(data.status == "Canceled"){
-    document.getElementById("replace" + i).innerHTML = data.name + " has been canceled";
-  }else{
-    var currentTime = formatDate(new Date()) // get current date in proper format
-    //alert(currentTime)
-
-    function formatDate(date) { // get the date in proper format
-    var d = new Date(date),
-        month = '' + (d.getMonth() + 1),
-        day = '' + d.getDate(),
-        year = d.getFullYear();
-
-    if (month.length < 2) month = '0' + month;
-    if (day.length < 2) day = '0' + day;
-
-    return [year, month, day].join('-');
+function setText(text, i){
+  document.getElementById("replace" + i).innerHTML = text;
+  document.getElementById("replace" + i).style.display = "block";
 }
 
-    var currentTime = formatDate(new Date()) // get current date in proper format
-    if(data.last_air_date > currentTime){
-
-    curY = currentTime.substr(0,4);
-    curM = currentTime.substr(5, 2);
-    curD = currentTime.substr(8,8);
-    var length = data.seasons.length - 1; //get the amount of seasons
-    var seasons = data.seasons[length]; // get the last season
-    var otherSeasons = seasons;
-    if(otherSeasons.air_date == null){otherSeasons = data.seasons[length - 1]}
-    theMovieDb.tvSeasons.getById({"id":data.id, "season_number": otherSeasons.season_number},
-    function(data){
-    var data = JSON.parse(data);
-    if(data.air_date === currentTime){
-    document.getElementById("replace" + i).innerHTML = showname + "\'s new season airs today!"
-    }else if(data.air_date < currentTime){
-
-        var episodes = data.episodes
-        var seasonLength = episodes.length - 1
-    var count = seasonLength;
-    while(count > -1){
-    var curEp = episodes[count].air_date;
-    var curEp2 = episodes[count - 1].air_date
-    count --;
-    if(curEp2 < currentTime) { // if latest episode has been selected
-          count = -2; // stop counting
-          if(curEp === currentTime) {
-    document.getElementById("replace" + i).innerHTML = "The next episode of " + showname + " airs today!"
-    }
-          else if(curEp < currentTime) {
-            document.getElementById("replace" + i).innerHTML = "We don\'t know when the next episode of  " + showname + " airs.";
-
-            }
-          else if(curEp > currentTime) {
-
-    nextY = curEp.substr(0,4);
-    nextM = curEp.substr(5, 2);
-    nextD = curEp.substr(8,8);
-
-    difY = nextY - curY - 1 + 1;
-    difM = nextM - curM - 1 + 1 - 1;
-    difD = nextD - curD - 1 + 1;
-
-
-
-    difW = 0;
-    while(difD > 6){difD -= 7; difW += 1;}
-    while(difD < 0){
-    nextM--;
-    if(nextM === 0){nextM = 12}
-    switch(nextM){
-    case 1:
-    case 3:
-    case 5:
-    case 8:
-    case 7:
-    case 10:
-    case 12:
-    difD += 31;
-    break;
-    case 4:
-    case 6:
-    case 9:
-    case 8:
-    case 11:
-    difD += 30;
-    break;
-    case 2:
-    if(curY % 4 == 0) {difD += 29}else{difD += 28}
-    }
+ function tvdb(serie, i, u) {
+var today = formatDate(new Date());
+theMovieDb.search.getTv({"query":serie}, function(data) {
+  var data = JSON.parse(data)
+  data = data.results[0]
+    if(data == undefined){setText("Show not found", i)}
+  var id = data.id
+  theMovieDb.tv.getById({"id":id}, function(data) {
+    var data = JSON.parse(data)
+    var name = data.name;
+    var LAD = data.last_air_date;
+    var seasons = data.seasons
+    if(Boolean(data.seasons[data.seasons.length - 1].air_date)){
+    var nextSeason = data.seasons[data.seasons.length - 1].air_date} else {
+      var nextSeason = data.seasons[data.seasons.length - 2].air_date
     }
 
 
-    var insert = "";
-    if(difY > 1){insert += difY + " Years, "}else if(difY == 1){insert += difY + " Year, "}
-    if(difM > 1){insert += difM + " Months, "}else if(difM == 1){
-    insert += difM + " Month, "}
-    if(difW > 1){insert += difW + " Weeks, "}else if(difW == 1){
-    insert += difW + " Week, "
-    }
-    if(difD > 1){insert += difD + " Days."}else if(difD == 1){
-    insert += difD + " Day."
-    }
-
-
-
-    document.getElementById("replace" + i).innerHTML = showname + "\'s next episode airs in " + insert;
-
-
-    } // if the episode is in the known future
+if(nextSeason > today){ // new season
+  var days = "";
+  var months = "";
+  var weeks = "";
+  var years = "";
+  var nextSeason = nextSeason.toString();
+  var countdownJSON = time.until(nextSeason)
+  if(countdownJSON.days == 1){var days = "1 day."}else if(countdownJSON.days == 0){}else{var days = countdownJSON.days + " days."}
+  if(countdownJSON.weeks == 1){var weeks = "1 week "}else if(countdownJSON.weeks == 0){}else{var weeks = countdownJSON.weeks + " weeks "}
+  if(countdownJSON.months == 1){var months = "1 month "}else if(countdownJSON.months == 0){}else{var months = countdownJSON.months + " months "}
+  if(countdownJSON.years == 1){var years = "1 year "}else if(countdownJSON.years == 0){}else{var years = countdownJSON.years + " years "}
 
 
 
 
+var countDown = years + months + weeks + days;
 
-        }
+  var text = "the next season of " + name + " airs in " + countDown;
+  setText(text,i)
+}
+else if(nextSeason < today){
+  if(data.status = "Canceled" && data.in_production === false){
+  var text = name + " is over. :(";
+  setText(text,i)
+}else{
+
+  theMovieDb.tvSeasons.getById({"id":data.id, "season_number": data.seasons[data.seasons.length - 1].season_number},
+  function(data){
+    var data = JSON.parse(data)
+   //console.log(data)
+   for(var i = data.episodes.length ; i > 0; i--){
+     if(Boolean(data.episodes[i])){
+     //console.log(data.episodes[i].air_date + today)
+     if(data.episodes[i].air_date > today) {
+       var latest = data.episodes[i].air_date
+     }
+   }
+   }
+   if(Boolean(latest)){
+  // console.log(latest + name)
+   var days = "";
+   var months = "";
+   var weeks = "";
+   var years = "";
+   var latest = latest.toString();
+   var countdownJSON = time.until(latest)
+   if(countdownJSON.days == 1){var days = "1 day."}else if(countdownJSON.days == 0){}else{var days = countdownJSON.days + " days."}
+   if(countdownJSON.weeks == 1){var weeks = "1 week "}else if(countdownJSON.weeks == 0){}else{var weeks = countdownJSON.weeks + " weeks "}
+   if(countdownJSON.months == 1){var months = "1 month "}else if(countdownJSON.months == 0){}else{var months = countdownJSON.months + " months "}
+   if(countdownJSON.years == 1){var years = "1 year "}else if(countdownJSON.years == 0){}else{var years = countdownJSON.years + " years "}
+
+inshow = "the next episode of " + name + " airs in " + years + months + weeks + days;
+console.log(i)
+setText(inshow, u)
+}
+else{
+  var tooBad = "We don't know when the next episode of " + name + " airs.."
+  setText(tooBad, u)
+
+}
 
 
+  },function(error){})
 
-    }
-
-
-
-
-
-
-
-
-
-    }else if(data.air_date > currentTime){
-
-    nextY = data.air_date.substr(0,4);
-    nextM = data.air_date.substr(5, 2);
-    nextD = data.air_date.substr(8,8);
-
-    difY = nextY - curY - 1 + 1;
-    difM = nextM - curM - 1 + 1;
-    difD = nextD - curD - 1 + 1;
-
-
-
-    difW = 0;
-    while(difD > 6){difD -= 7; difW += 1;}
-    if(difD < 0){
-    nextM--;
-    if(nextM === 0){nextM = 12}
-    switch(nextM){
-    case 1:
-    case 3:
-    case 5:
-    case 8:
-    case 7:
-    case 10:
-    case 12:
-    difD += 31;
-    break;
-    case 4:
-    case 6:
-    case 9:
-    case 8:
-    case 11:
-    difD += 30;
-    break;
-    case 2:
-    if(curY % 4 == 0) {difD += 29}else{difD += 28}
-    }
-    }
-if(difD > 6){difD -=7; difW++}
-
-    var insert = "";
-    if(difY > 1){insert += difY + " Years, "}else if(difY == 1){insert += difY + " Year, "}
-    if(difM > 1){insert += difM + " Months, "}else if(difM == 1){
-    insert += difM + " Month, "}
-    if(difW > 1){insert += difW + " Weeks, "}else if(difW == 1){
-    insert += difW + " Week, "
-    }
-    if(difD > 1){insert += difD + " Days."}else if(difD == 1){
-    insert += difD + " Day."
-    }
+}
+}
 
 
 
-    document.getElementById("replace" + i).innerHTML = showname + "\'s new season airs in " + insert;
-  }
-    },function(error){});
+  }, function(error){})
+},function(error){})
 
 
-    }else{
-    document.getElementById("replace" + i).innerHTML = "We don't know when the next episode of " + data.name + " airs."
-    var length = data.seasons.length - 1; //get the amount of seasons
-    var seasons = data.seasons[length]; // get the last season
-    var otherSeasons = seasons;
-    if(otherSeasons.air_date == null){otherSeasons = data.seasons[length - 1]}
-    theMovieDb.tvSeasons.getById({"id":data.id, "season_number": otherSeasons.season_number},
-    function(data){
-      var data = JSON.parse(data);
-      var length = data.episodes.length
-      for(var i = length; i > -1; i--){
-        var episodes = data.episodes[i]
+ }
 
-        if(episodes != undefined && episodes.air_date >= currentTime){
-
-          var newTime = episodes.air_date;
-        }
-
-
-
-      }
-      if(newTime === currentTime && episodes != undefined){
-        document.getElementById("replace" + always).innerHTML = "The next episode of " + showname + " airs today!"
-
-      }
-    },function(error){})
-
-
-    }
-
-
-
-  }
-
-        },function(error){})
-        },function(error){})
-  }}
 
   function update(){
     for(var i = 1; i < 1000; i++){
