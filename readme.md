@@ -4,6 +4,6 @@ See this version in action [here] (http://myshows-trialandsuccess.rhcloud.com)
 
 See releases at http://github.com/robinvandernoord/nextepisodes/releases
 
-[Latest mac release] (https://github.com/robinvandernoord/nextepisodes/releases/tag/MyShowsOSX1.1)
+[Latest mac release] (https://github.com/robinvandernoord/nextepisodes/releases/tag/MyShowsOSX1.2)
 
-[Latest pc release] (https://github.com/robinvandernoord/nextepisodes/releases/tag/MyShowsWIN1.1)
+[Latest pc release] (https://github.com/robinvandernoord/nextepisodes/releases/tag/MyShowsWIN1.2)
