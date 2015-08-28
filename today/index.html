@@ -18,12 +18,13 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <style>
 body {
-background-size: cover;
+//background-size: cover;
+background-image: url("http://i.imgur.com/07t2mb2.gif")
 }
 
 a, a:hover, a:visited {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 </style>
 </head>
@@ -32,7 +33,7 @@ a, a:hover, a:visited {
 <script>
 
 page = 1;
-setTimeout(function dunnoo() {document.write("<h1 style='font-family:Arial'><center>Today on tv</center></h1>")}, 50);
+setTimeout(function dunnoo() {document.body.innerHTML += ("<h1 style='font-family:Arial; color:white'><center>Today on tv</center></h1>")}, 01);
 function again() {
 theMovieDb.tv.getAiringToday({"page":page},
   function(data){
@@ -66,7 +67,7 @@ episodeNetwork = data.networks[data.networks.length - 1].name;
       if(episodeInfo == episodeInfo2) {
 
         }
-else {document.write("<center><a style='font-family:Arial; color:black; text-decoration: none' target='_top' href='http://wsms.ml/" + thes + "'>" + episodeInfo +  " on " + episodeNetwork + "</a></center>" + "<br>")}
+else {document.body.innerHTML += ("<center><a style='font-family:Arial; color:white; text-decoration: none' target='_top' href='http://wsms.ml/" + thes + "'>" + episodeInfo +  " on " + episodeNetwork + "</a></center>" + "<br>")}
       episodeInfo2 = episodeInfo
 
 

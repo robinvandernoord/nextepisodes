@@ -35,9 +35,9 @@
 .alertify {
 	position: fixed; z-index: 99999;
 	top: 5%; left: 33%;
-	width: 1000px;
-	height: 600px;
-	margin-left: -275px;
+	width: 80%;
+	height: 80%;
+	margin-left: -22%;
 	opacity: 1;
 }
 	.alertify-hidden {

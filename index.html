@@ -109,9 +109,9 @@ window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.
       white-space: nowrap;
       overflow: hidden;
       width: 30em;">Please enter a TV-Show:</div><div id="replace">
-        <input placeHolder="text" name="inputShow" id="inputShow" type="text" style="width: 600px; height: 75px; font-size: 50px; text-align: center;"><p id="insert"><span onclick="alertifyPopup()">See what airs today</span></p></input><p id ="insInf" onclick="alert(episodeInfo)"></p></div></center></td>
+        <input placeHolder="text" name="inputShow" id="inputShow" type="text" style="width: 600px; height: 75px; font-size: 50px; text-align: center;"><p id="insert"></p><p id ="insInf" onclick="alert(episodeInfo)"></p><p id="stay"><span onclick="alertifyPopup()">See what airs today</span></p></input></div></center></td>
 <script>function alertifyPopup() {
-  alertify.alert("<div id='special'><iframe frameBorder='0' width='80%' height='80%' src='today/index.html'></iframe></div>");}</script>
+  alertify.alert("<div id='special'><center><iframe frameBorder='0' style='margin-top:-6%;margin-left:-5%' width='110%' height='110%' src='today/index.html'></iframe></center></div>");}</script>
   </tr>
 </table>
 <div width="5em" height="1%" id="recentsT" style="background-color: Black;
@@ -119,7 +119,7 @@ window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.
     /* These three lines are for transparency in all browsers. */
     -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=75)';
     filter: alpha(opacity=75);
-    opacity: .75; color:white; width:100%; height:5%"><h2>Recent Episodes</h2></div><div style="height:25%; width:100%; background-color: Black;
+    opacity: .75; color:white; width:100%; font-family: Helvetica; height:5%"><h2>Recent Episodes</h2></div><div style="height:25%; width:100%; background-color: Black;
     z-index: 1;
     /* These three lines are for transparency in all browsers. */
     -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=75)';

@@ -13,6 +13,7 @@
 }
 body {
 background-size: cover;
+font-family: Helvetica;
 }
 body {
 background-size: cover;
@@ -63,7 +64,7 @@ p{
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
       filter: alpha(opacity=50);
       opacity: .5;
-  font-family: "Courier";
+  font-family: "Helvetica";
   font-size: 20px;
   margin: 10px 0 0 10px;
   white-space: nowrap;
@@ -100,14 +101,14 @@ p:a{
 }
 }
 #featured {
-font-size: 50px;text-align: left; font-family: Courier; color: black;
+font-size: 50px;text-align: left; font-family: Helvetica; color: black;
 background-color: white;
     z-index: 1;
     /* These three lines are for transparency in all browsers. */
     -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=50)';
     filter: alpha(opacity=50);
     opacity: .5;
-font-family: "Courier";
+font-family: "Helvetica";
 font-size: 20px;
 margin: 10px 0 0 10px;
 white-space: nowrap;
