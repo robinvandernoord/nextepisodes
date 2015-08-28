@@ -1,0 +1,99 @@
+<html>
+<head>
+  <title>When's my show</title>
+  <!-- made by Trial and Success -->
+<meta name="description" content="Find out when your favorite tv show airs a new episode! Today on air:" />
+<meta name="keywords" content="tv, show, gotham, sherlock, orange, is, the, new, black, TVDB, API, trakt, silicon, valley, website, software, free, online, no download, twitter, Facebook, search, today, air, tv, live" />
+<meta name="author" content="Trial and Success">
+<meta name="robots" content="index, follow">
+<meta name="revisit-after" content="3 month">
+<meta property="og:url" content="http://van-der-noord.nl/whensmyshow/today/" />
+<meta property="og:title" content="What airs today?" />
+<meta property="og:description" content="Find out which tv shows air a new episode today!" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="http://cdn.marketplaceimages.windowsphone.com/v8/images/4083859e-87c0-4921-8776-3928d7ea7b55?imageType=ws_icon_large.img" />
+
+<title>When's my show?</title>
+<!-- tv, show, search -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<style>
+body {
+//background-size: cover;
+background-image: url("http://i.imgur.com/07t2mb2.gif")
+}
+
+a, a:hover, a:visited {
+  text-decoration: none;
+  color: white;
+}
+</style>
+</head>
+<body>
+<script src="../themoviedb.js"></script>
+<script>
+
+page = 1;
+setTimeout(function dunnoo() {document.body.innerHTML += ("<h1 style='font-family:Arial; color:white'><center>Today on tv</center></h1>")}, 01);
+function again() {
+theMovieDb.tv.getAiringToday({"page":page},
+  function(data){
+    var data = JSON.parse(data);
+
+  totPages = data.total_pages;
+  totLength = data.results.length
+  var count = totLength;
+  var episodeInfo2;
+
+  while(count > -1) {
+    countThis = count - 1;
+    thisname = data.results[countThis];
+    if(thisname != undefined){
+    thisid = thisname.id;
+
+    thisname = thisname.name;
+
+
+  }
+    theMovieDb.tv.getById({"id":thisid}, function(data) {
+      data = JSON.parse(data);
+
+      seasons = data.seasons[data.seasons.length - 1]
+      seasonCur = seasons.season_number;
+      episodeCur = seasons.episode_count;
+      window.thisname = data.name;
+      thes = data.id;
+episodeNetwork = data.networks[data.networks.length - 1].name;
+      episodeInfo = "'" + data.name + "' " + seasonCur + "x" + episodeCur;
+      if(episodeInfo == episodeInfo2) {
+
+        }
+else {document.body.innerHTML += ("<center><a style='font-family:Arial; color:white; text-decoration: none' target='_top' href='http://wsms.ml/" + thes + "'>" + episodeInfo +  " on " + episodeNetwork + "</a></center>" + "<br>")}
+      episodeInfo2 = episodeInfo
+
+
+
+    }, function(error){});
+
+    count--
+  }
+
+
+//alert("hi")
+  if(page < totPages) {
+    //alert("again")
+    page++;
+    again();
+  }
+  else{//alert("not again")
+  }
+  },
+  function(error){
+    console.log(error)
+  })
+}
+again();
+</script>
+
+
+</body>
+</html>

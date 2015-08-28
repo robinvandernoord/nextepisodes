@@ -1,3 +1,9 @@
-The OpenShift `nodejs` cartridge documentation can be found at:
+Welcome! A readme file is coming soon, for now, see the official (old) version of this project in action on http://van-der-noord.nl/whensmyshow.
 
-http://openshift.github.io/documentation/oo_cartridge_guide.html#nodejs
+See this version in action [here] (http://myshows-trialandsuccess.rhcloud.com)
+
+See releases at http://github.com/robinvandernoord/nextepisodes/releases
+
+[Latest mac release] (https://github.com/robinvandernoord/nextepisodes/releases/tag/MyShowsOSX1.2)
+
+[Latest pc release] (https://github.com/robinvandernoord/nextepisodes/releases/tag/MyShowsWIN1.2)
