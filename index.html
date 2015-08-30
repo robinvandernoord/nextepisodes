@@ -42,7 +42,7 @@ amount = 1;
       if(localStorage.getItem("firstime") == "no" || localStorage.getItem("firsttime") !== null){
         console.log("welcome back!")
       }else{console.log("welcome");localStorage.clear(); localStorage.setItem("firsttime", "no")}
-
+var list = [];
       function load(){
 
         for(var i = 1; i < 1000; i++){
@@ -51,6 +51,7 @@ amount = 1;
               localStorage.getItem("show"+i)
             )){
         var item = localStorage.getItem("show"+i);
+        list[i - 1] = item;
         if(
           Boolean(
             document.getElementById("form" + i)
@@ -70,6 +71,7 @@ amount = 1;
         }
         }
         load()
+
       }
 
       function del(){
@@ -95,8 +97,26 @@ var elem2 = document.getElementById("replace"+amone);
       }
 
 load()
+console.log(list)
+var random = Math.floor(Math.random() * list.length - 1);
+if(random > 3){var alternative = 2}else{var alternative = 1}
+console.log(list[random])
+theMovieDb.search.getTv({"query":list[random]}, function(data) {
+  var data = JSON.parse(data)
+  var result = data.results[0]
+  if(Boolean(result)){
+  var background = result.backdrop_path;
+  background = "https://image.tmdb.org/t/p/original" + background
+  background = "url("+background+")"
+  document.body.style.backgroundImage = background;
+}
+}, function(error){})
+
+
+
+
   </script>
-  <center><button onclick="edit()" id="form">Update info!</button>
+  <center><button onclick="edit(); location.reload()" id="form">Update info!</button>
     <button onclick="reset()" id="form">Reset shows</button>
   <button onclick="add()" id="form">add field</button>
   <button onclick="del()" id="form">remove field</button>
@@ -140,6 +160,8 @@ theMovieDb.search.getTv({"query":serie}, function(data) {
   theMovieDb.tv.getById({"id":id}, function(data) {
     var data = JSON.parse(data)
     var name = data.name;
+    localStorage.setItem("show" + i, name)
+    document.getElementById("form" + i).value = name
     var LAD = data.last_air_date;
     var seasons = data.seasons
     if(Boolean(data.seasons[data.seasons.length - 1].air_date)){
@@ -200,7 +222,7 @@ else if(nextSeason < today){
    if(countdownJSON.years == 1){var years = "1 year "}else if(countdownJSON.years == 0){}else{var years = countdownJSON.years + " years "}
 
 inshow = "the next episode of " + name + " airs in " + years + months + weeks + days;
-console.log(i)
+//console.log(i)
 setText(inshow, u)
 }
 else{
