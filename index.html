@@ -1,3 +1,7 @@
+<iframe id="iframe" style="width: 100%; height: 100%; z-index: 10000000; position:fixed;top:0px;left:0px;z-index:40" frameborder="0" src="loading/index.html"></iframe>
+<script>
+setTimeout(function waitt(){document.getElementById("iframe").style.display = "none"},3500)
+</script>
 <html>
 <head>
   <title>Next Episodes</title>
@@ -83,13 +87,16 @@
      js.src = "http://connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-</script>
+
+
+   function userclick() {
+     alertify.alert("<div id='special'><center><iframe frameBorder='0' style='margin-top:-6%;margin-left:-5%' width='110%' height='110%' src='info.html'></iframe></center></div>");}</script>
 <div id="tweet" ><a target="_blank" id="tweetURL" style="color:black" class="twitter-shar/e-button"
   href="https://twitter.com/share?text=See when the next episode of your favorite tv show airs on">
   <i class="fa fa-twitter fa-2x"></i>
 </a></div><a id="FBUrl" style="color:black" target="_blank" href="https://www.facebook.com/sharer/sharer.php?app_id=113869198637480&sdk=joey&u=http%3A%2F%2Fvan-der-noord.nl%2Fwhensmyshow&display=popup&ref=plugin&src=share_button"><div id="facebook"><i class="fa fa-facebook fa-2x"></i></div></a>
 <script>function alertFB() {var maybe = confirm("Would you like to add our app to your facebook page?"); if(maybe){window.location.href= "https://www.facebook.com/dialog/pagetab?app_id=1594313917494736&redirect_uri=https://bit.ly/1M7UNw7"}}</script>
-<div id="about" onclick="alert('Soon there will be a privacy policy, TOS, FAQ, iOS + mac + android apps and an about page. And you can save all of your shows and see their info in one click!>'); alertFB();"><i class="fa fa-users fa-2x"></i></div>
+<div id="about" onclick="userclick();"><i class="fa fa-users fa-2x"></i></div>
 <script>
 window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
 </script>
@@ -136,6 +143,6 @@ window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.
 <script src="themoviedb.js"></script>
 <script src="main.js"></script>
 <script src="main2.js"></script>
-
 </body>
+
 </html>

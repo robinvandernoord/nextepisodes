@@ -1,0 +1,60 @@
+<style>div {float:left;
+height: 100%; width: 14.2857142857%;
+font-family: Arial;
+line-height: 3;
+
+  }
+#text {
+
+    z-index:1000;
+    position:absolute;
+    color:white;
+    font-size:24px;
+    font-weight:bold;
+    //left:30%;
+    top:90%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.7);
+
+}
+
+  </style>
+  <script>
+
+  function funct(a){
+    for(var i = 1; i < 8; i++){
+      if(i != a){
+      document.getElementById(i).style.width = "8.33333333333%"
+    }
+    }
+    document.getElementById(a).style.width = "50%"
+    document.getElementById(a).style.lineHeight  = "20"
+
+    document.getElementById(a).style.fontSize  = "200%"
+  }
+
+  function functi(a){
+    for(var i = 1; i < 8; i++){
+      //console.log(i)
+      document.getElementById(i).style.width = "14.2857142857%"
+      document.getElementById(i).style.lineHeight  = "3"
+      //document.getElementById(i).style.color  = "black"
+      document.getElementById(i).style.fontSize  = "100%"
+    }
+  }
+  </script><center>
+<a target="_top" href="http://van-der-noord.nl/whensmyshow/TOS.html"><div id='1' onmouseout="functi('1')" onmouseover="funct('1')" style="background-color:red;">Terms of Service</div></a>
+<a target="_top" href="http://van-der-noord.nl/whensmyshow/privacypolicy.html"><div id='2' onmouseout="functi('2')" onmouseover="funct('2')" style="background-color:orange;">Privacy Policy</div></a>
+<a target="_top" href="http://nextepisodes.trialandsuccess.xyz/myshows"><div id='3' onmouseout="functi('3')" onmouseover="funct('3')" style="background-color:yellow;">My Shows</div></a>
+<div id='4' onclick="alert('coming soon')" onmouseout="functi('4')" onmouseover="funct('4')" style="background-color:green;">Login</div>
+<a target="_top" href="http://facebook.com/trialandsucces"><div id='5' onmouseout="functi('5')" onmouseover="funct('5')" style="background-color:darkblue;">Facebook</div></a>
+<a target="_top" href="http://github.com/robinvandernoord"><div id='6' onmouseout="functi('6')" onmouseover="funct('6')" style="background-color:purple;">Github</div></a>
+<a target="_top" href="http://twitter.com/trialandsuccess"><div id='7' onmouseout="functi('7')" onmouseover="funct('7')" style="background-color:violet;">Twitter</div></a>
+<center><div id="text">Made by <a href="http://trialandsuccess.xyz" style="color:#0B6B17">Trial and Success<sup>xyz</sup></a></div></center>
+</center>
+<script>
+for(var i = 1; i < 8; i++){
+  if(i != 3 && i != 7){document.getElementById(i).style.color  = "white"}
+  else {document.getElementById(i).style.color  = "black"}
+}
+</script>
